@@ -66,4 +66,23 @@ site.filter("encodeURIComponent", (s: unknown) =>
   encodeURIComponent(String(s ?? ""))
 );
 
+/**
+ * GitHub Pages のプロジェクトサイト（/REPO/）では、Feed 本文内の Markdown リンクが
+ * Lume の `fixUrls` で `new URL("/posts/...", 記事URL)` となり、ベースパスが落ちる。
+ * feed プラグインは `beforeSave` でページを追加するため、同イベント内で（追加後に）置換する。
+ */
+site.addEventListener("beforeSave", () => {
+  const base = siteBaseUrl();
+  const repoPath = base.pathname.replace(/\/$/, "") || "";
+  if (!repoPath) return;
+  const wrong = `${base.origin}/posts/`;
+  const right = `${base.origin}${repoPath}/posts/`;
+  for (const page of site.pages) {
+    const out = page.outputPath;
+    if (!out.endsWith("feed.xml") && !out.endsWith("feed.json")) continue;
+    if (typeof page.content !== "string") continue;
+    page.content = page.content.replaceAll(wrong, right);
+  }
+});
+
 export default site;
