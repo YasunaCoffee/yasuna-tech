@@ -4,6 +4,8 @@
  * 外枠: OGP とサムネ共通の単色（フラット・#E9A6AF）
  *
  * 実行: deno task og
+ *
+ * フォント: 既定は jsDelivr → unpkg。両方失敗する場合は scripts/fonts/ に .woff を置くとローカル優先。
  */
 import satori from "npm:satori@0.10.14";
 import { initWasm, Resvg } from "npm:@resvg/resvg-wasm@2.6.2";
@@ -44,16 +46,49 @@ const THUMB_HEIGHT = 540;
 const OGP_FRAME_COLOR = "#E9A6AF";
 const OG_FRAME_WIDTH_PX = 20;
 
-async function loadFonts(): Promise<ArrayBuffer[]> {
-  const urls = [
-    "https://unpkg.com/@fontsource/noto-sans-jp@5.2.8/files/noto-sans-jp-japanese-400-normal.woff",
-    "https://unpkg.com/@fontsource/noto-sans-jp@5.2.8/files/noto-sans-jp-japanese-700-normal.woff",
+const NOTO_SANS_JP_VERSION = "5.2.8";
+const FONT_WOFF_FILES = [
+  "noto-sans-jp-japanese-400-normal.woff",
+  "noto-sans-jp-japanese-700-normal.woff",
+] as const;
+
+/** CI 等で unpkg が 5xx になることがあるため、複数ミラー＋任意のローカル配置にフォールバック */
+function fontSourceUrls(filename: string): string[] {
+  const base = `@fontsource/noto-sans-jp@${NOTO_SANS_JP_VERSION}/files/${filename}`;
+  return [
+    `https://cdn.jsdelivr.net/npm/${base}`,
+    `https://unpkg.com/${base}`,
   ];
+}
+
+async function loadFontWoff(filename: string): Promise<ArrayBuffer> {
+  const localPath = join(ROOT, "scripts", "fonts", filename);
+  try {
+    if ((await Deno.stat(localPath)).isFile) {
+      return await Deno.readFile(localPath);
+    }
+  } catch {
+    // ローカルなし → リモートへ
+  }
+  const errors: string[] = [];
+  for (const url of fontSourceUrls(filename)) {
+    try {
+      const res = await fetch(url);
+      if (res.ok) return await res.arrayBuffer();
+      errors.push(`${res.status} ${url}`);
+    } catch (e) {
+      errors.push(`${url}: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
+  throw new Error(
+    `Font fetch failed for ${filename}. Tried: ${errors.join("; ")}`,
+  );
+}
+
+async function loadFonts(): Promise<ArrayBuffer[]> {
   const out: ArrayBuffer[] = [];
-  for (const url of urls) {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Font fetch failed: ${res.status} ${url}`);
-    out.push(await res.arrayBuffer());
+  for (const file of FONT_WOFF_FILES) {
+    out.push(await loadFontWoff(file));
   }
   return out;
 }
