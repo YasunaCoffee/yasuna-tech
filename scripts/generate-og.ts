@@ -35,7 +35,7 @@ const ICON_CANDIDATES: [string, string][] = [
 
 const SITE_NAME = "yasunaのてっくぶろぐ";
 const SITE_URL = Deno.env.get("SITE_URL") ??
-  "https://yasunacoffee.github.io/yasuna-lume-blog/";
+  "https://yasunacoffee.github.io/yasuna-tech/";
 
 const OG_WIDTH = 1200;
 const OG_HEIGHT = 630;

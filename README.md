@@ -1,4 +1,4 @@
-# yasuna blog（Lume）
+# yasunaのてっくぶろぐ（Lume）
 
 [Deno](https://deno.land/) の [Lume](https://lume.land/) と [Simple Blog](https://lume.land/theme/simple-blog/) で作る静的ブログです。見た目は [Material Design 3](https://m3.material.io/styles/color) のカラー・サーフェス階層を `src/zenn.css` で少しだけ寄せています（ビルド後は `/zenn.css` として出力され、`layouts/base.vto` から `/styles.css` の次に読み込みます）。記事は **AI エージェントと yasuna 文体**（`prompts/yasuna-style-prompt.md`）を前提に執筆します。
 
@@ -49,7 +49,15 @@ deno task serve
 
 ## GitHub Pages
 
-`.github/workflows/deploy.yml` で `main` へ push すると `_site` をデプロイする想定です。リポジトリの **Settings → Pages** で GitHub Actions を有効にしてください。
+`.github/workflows/deploy.yml` で `main` へ push すると `_site` をデプロイする想定です。
+
+### 初回・`Failed to create deployment` / `HttpError: Not Found` (404) のとき
+
+1. リポジトリの **Settings → Pages** を開く。
+2. **Build and deployment** の **Source** を **GitHub Actions** にする（**Deploy from a branch** のままだと `actions/deploy-pages` が 404 になりやすい）。
+3. 保存後、**Actions** タブから失敗したワークフローを **Re-run all jobs** する。
+
+無料プランでは **パブリック** リポジトリ向けの Pages 前提が強いです。プライベートにした直後は Pages が無効になる場合があります。
 
 プロジェクトサイト（`https://USER.github.io/REPO/`）の場合は、`_config.ts` で `basePath` 等が必要になることがあります。[Lume の base_path](https://lume.land/plugins/base_path/) を参照してください。
 

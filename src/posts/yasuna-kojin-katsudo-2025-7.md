@@ -31,7 +31,7 @@ AITuber という簡単に言うと裏側が AI の VTuber のようなものを
 - [X（@yasun_ai）](https://x.com/yasun_ai)
 - [Zenn](https://zenn.dev/yasuna)
 - [note](https://note.com/yasunacoffee)
-- [GitHub](https://github.com/YasunaCoffee)
+- [GitHub](https://github.com/YasunaCoffee/yasuna-tech)
 
 ### 技術スキル
 
