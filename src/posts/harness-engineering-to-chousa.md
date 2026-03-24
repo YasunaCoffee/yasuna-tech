@@ -13,6 +13,8 @@ tags:
 draft: false
 ---
 
+こんにちは！yasunaです！
+
 ハーネスエンジニアリングに興味を持ったのは、人間が随時「見張って」直す運用だけでは続かないと感じたからです。ドキュメントが古くなって入力の質が落ちたり、ルールを細かく説明しないとエージェントが安定しなかったりと、負担の正体を言語化したかったです。加えて、[OpenAI の Harness Engineering（日本語）](https://openai.com/ja-JP/index/harness-engineering/)で、制約やコンテキスト、時間で荒れるものまで含めて設計する話が整理されており、自分の違和感と重なりました。Claude Code 上で「skills だけで足りるのか」「Codex でも同じ検査を回したい」という話も重なり、調べ始めました。
 
 ## まず [OpenAI — Harness Engineering（日本語）](https://openai.com/ja-JP/index/harness-engineering/) を読んでみた
