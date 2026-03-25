@@ -334,7 +334,7 @@ function ogTree(
 function thumbTree(
   title: string,
   category: string,
-  author: string,
+  _author: string,
   iconDataUrl: string | undefined,
   featureTag?: string,
 ): Record<string, unknown> {
@@ -342,22 +342,21 @@ function thumbTree(
   const outerR = 8;
   const innerR = Math.max(0, outerR - frameWidth);
 
-  /** 絵文字は Noto で欠損するため、OG と同様にカテゴリ／タイトルの先頭1文字 */
-  const categoryInitial = pickInitial(category, title);
+  const initial = pickInitial(category, title);
+  const tagLabel = featureTag ?? category;
+  const tagColor = featureTag
+    ? (FEATURE_TAGS[featureTag] ?? OGP_FRAME_COLOR)
+    : "#e6e8ec";
+  const tagTextColor = featureTag ? "#ffffff" : "#1a1c1e";
 
-  /** 1行あたり文字数（960×540・余白込みで折り返し優先） */
-  const titleCharsPerLine = 26;
-  const titleMaxLines = 5;
+  const titleCharsPerLine = 22;
+  const titleMaxLines = 4;
   const titleLines = wrapTextLines(title, titleCharsPerLine, titleMaxLines);
-  const titleFontSize = titleLines.length >= 5
-    ? 24
-    : titleLines.length >= 4
-    ? 26
-    : titleLines.length >= 3
+  const titleFontSize = titleLines.length >= 4
     ? 28
-    : 30;
-
-  const categoryLines = wrapTextLines(category, 20, 2);
+    : titleLines.length >= 3
+    ? 32
+    : 38;
 
   const inner: Record<string, unknown> = {
     type: "div",
@@ -368,22 +367,22 @@ function thumbTree(
         justifyContent: "space-between",
         width: "100%",
         height: "100%",
-        padding: "20px 24px",
+        padding: "24px 32px",
         backgroundColor: "#f8f9fc",
         borderRadius: innerR,
         fontFamily: "Noto Sans JP",
         boxSizing: "border-box",
       },
       children: [
+        // 上段: イニシャルボックス（左）＋ タグバッジ（右）
         {
           type: "div",
           props: {
             style: {
               display: "flex",
               flexDirection: "row",
-              justifyContent: "flex-start",
+              justifyContent: "space-between",
               alignItems: "flex-start",
-              gap: 10,
               flexShrink: 0,
             },
             children: [
@@ -391,81 +390,41 @@ function thumbTree(
                 type: "div",
                 props: {
                   style: {
-                    width: 44,
-                    height: 44,
-                    flexShrink: 0,
-                    fontSize: 22,
+                    width: 80,
+                    height: 80,
+                    fontSize: 40,
                     fontWeight: 700,
                     color: "#1a1c1e",
                     backgroundColor: "#e6e8ec",
-                    borderRadius: 6,
+                    borderRadius: 8,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     lineHeight: 1,
+                    flexShrink: 0,
                   },
-                  children: categoryInitial,
+                  children: initial,
                 },
               },
               {
                 type: "div",
                 props: {
                   style: {
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: 4,
-                    flex: 1,
-                    minWidth: 0,
+                    fontSize: 20,
+                    fontWeight: 700,
+                    color: tagTextColor,
+                    backgroundColor: tagColor,
+                    padding: "8px 18px",
+                    borderRadius: 20,
+                    lineHeight: 1.35,
                   },
-                  children: categoryLines.map((line) => ({
-                    type: "div",
-                    props: {
-                      style: {
-                        fontSize: 17,
-                        fontWeight: 700,
-                        color: "#1a1c1e",
-                        backgroundColor: "#e6e8ec",
-                        padding: "6px 12px",
-                        borderRadius: 4,
-                        lineHeight: 1.35,
-                        wordBreak: "break-all",
-                      },
-                      children: line,
-                    },
-                  })),
+                  children: tagLabel,
                 },
               },
             ],
           },
         },
-        ...(featureTag
-          ? [{
-            type: "div",
-            props: {
-              style: {
-                display: "flex",
-                flexDirection: "row",
-                flexShrink: 0,
-                paddingTop: 8,
-              },
-              children: [{
-                type: "div",
-                props: {
-                  style: {
-                    fontSize: 22,
-                    fontWeight: 700,
-                    color: "#ffffff",
-                    backgroundColor: FEATURE_TAGS[featureTag] ?? OGP_FRAME_COLOR,
-                    padding: "6px 20px",
-                    borderRadius: 20,
-                    lineHeight: 1.35,
-                  },
-                  children: featureTag,
-                },
-              }],
-            },
-          }]
-          : []),
+        // 中段: タイトル
         {
           type: "div",
           props: {
@@ -473,9 +432,8 @@ function thumbTree(
               flex: 1,
               display: "flex",
               alignItems: "center",
-              justifyContent: "flex-start",
-              paddingTop: 10,
-              paddingBottom: 10,
+              paddingTop: 12,
+              paddingBottom: 12,
               minHeight: 0,
             },
             children: [
@@ -495,7 +453,7 @@ function thumbTree(
                         fontSize: titleFontSize,
                         fontWeight: 700,
                         color: "#1d1b20",
-                        lineHeight: 1.32,
+                        lineHeight: 1.35,
                         letterSpacing: "-0.02em",
                         wordBreak: "break-all",
                       },
@@ -507,6 +465,7 @@ function thumbTree(
             ],
           },
         },
+        // 下段: アイコン＋サイト名＋URL（OGPと同じ構成）
         {
           type: "div",
           props: {
@@ -514,9 +473,9 @@ function thumbTree(
               display: "flex",
               flexDirection: "row",
               alignItems: "center",
-              gap: 12,
-              borderTop: "1px solid #cac4d0",
-              paddingTop: 12,
+              gap: 16,
+              borderTop: "1px solid #dbe4ef",
+              paddingTop: 16,
               flexShrink: 0,
             },
             children: [
@@ -528,8 +487,8 @@ function thumbTree(
                     width: 52,
                     height: 52,
                     style: {
-                      borderRadius: 12,
-                      border: "1px solid #cac4d0",
+                      borderRadius: 4,
+                      border: "1px solid #c3c6cf",
                       flexShrink: 0,
                     },
                   },
@@ -542,8 +501,6 @@ function thumbTree(
                     display: "flex",
                     flexDirection: "column",
                     gap: 4,
-                    flex: 1,
-                    minWidth: 0,
                   },
                   children: [
                     {
@@ -552,24 +509,17 @@ function thumbTree(
                         style: {
                           fontSize: 22,
                           fontWeight: 700,
-                          color: "#1d1b20",
+                          color: "#1a1c1e",
                           lineHeight: 1.25,
-                          wordBreak: "break-all",
                         },
-                        children: author,
+                        children: SITE_NAME,
                       },
                     },
                     {
                       type: "div",
                       props: {
-                        style: {
-                          fontSize: 18,
-                          fontWeight: 700,
-                          color: "#4a3d44",
-                          lineHeight: 1.25,
-                          wordBreak: "break-all",
-                        },
-                        children: `★ ${SITE_NAME}`,
+                        style: { fontSize: 18, color: "#5b6b7a" },
+                        children: new URL(SITE_URL).hostname,
                       },
                     },
                   ],
