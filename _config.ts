@@ -1,6 +1,7 @@
 import lume from "lume/mod.ts";
 import basePath from "lume/plugins/base_path.ts";
 import blog from "https://deno.land/x/lume_theme_simple_blog@v0.15.11/mod.ts";
+import markdown from "lume/plugins/markdown.ts";
 
 const siteUrl = Deno.env.get("SITE_URL") ?? "http://localhost:3000/";
 
@@ -30,6 +31,7 @@ site.copy("public", "/");
 site.copy("og");
 site.copy("thumbnails");
 
+site.use(markdown({ options: { linkify: true } }));
 site.use(blog());
 
 /** GitHub Pages のプロジェクトサイト（/REPO/）で /thumbnails 等の絶対パスを直す */
