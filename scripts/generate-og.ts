@@ -192,8 +192,13 @@ function ogTree(
   title: string,
   category: string,
   iconDataUrl: string | undefined,
+  featureTag?: string,
 ): Record<string, unknown> {
-  const initial = pickInitial(category, title);
+  const initial = featureTag ? featureTag[0]! : pickInitial(category, title);
+  const tagColor = featureTag
+    ? (FEATURE_TAGS[featureTag] ?? OGP_FRAME_COLOR)
+    : "#e6e8ec";
+  const tagTextColor = featureTag ? "#ffffff" : "#1a1c1e";
   const inner: Record<string, unknown> = {
     type: "div",
     props: {
@@ -219,23 +224,54 @@ function ogTree(
               flex: 1,
             },
             children: [
+              // 上段: イニシャルボックス（左）＋ タグバッジ（右）
               {
                 type: "div",
                 props: {
                   style: {
-                    fontSize: 72,
-                    fontWeight: 700,
-                    color: "#1a1c1e",
-                    backgroundColor: "#e6e8ec",
-                    width: 140,
-                    height: 140,
-                    borderRadius: 8,
                     display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    lineHeight: 1,
+                    flexDirection: "row",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
                   },
-                  children: initial,
+                  children: [
+                    {
+                      type: "div",
+                      props: {
+                        style: {
+                          fontSize: 72,
+                          fontWeight: 700,
+                          color: "#1a1c1e",
+                          backgroundColor: "#e6e8ec",
+                          width: 140,
+                          height: 140,
+                          borderRadius: 8,
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          lineHeight: 1,
+                        },
+                        children: initial,
+                      },
+                    },
+                    ...(featureTag
+                      ? [{
+                        type: "div",
+                        props: {
+                          style: {
+                            fontSize: 28,
+                            fontWeight: 700,
+                            color: tagTextColor,
+                            backgroundColor: tagColor,
+                            padding: "10px 24px",
+                            borderRadius: 24,
+                            lineHeight: 1.35,
+                          },
+                          children: featureTag,
+                        },
+                      }]
+                      : []),
+                  ],
                 },
               },
               {
@@ -342,7 +378,7 @@ function thumbTree(
   const outerR = 8;
   const innerR = Math.max(0, outerR - frameWidth);
 
-  const initial = pickInitial(category, title);
+  const initial = featureTag ? featureTag[0]! : pickInitial(category, title);
   const tagLabel = featureTag ?? category;
   const tagColor = featureTag
     ? (FEATURE_TAGS[featureTag] ?? OGP_FRAME_COLOR)
@@ -584,7 +620,7 @@ async function main(): Promise<void> {
     const tags = Array.isArray(data.tags) ? data.tags.map(String) : [];
     const featureTag = tags.find((t) => FEATURE_TAGS[t]);
 
-    const ogSvg = await satori(ogTree(title, category, iconDataUrl) as never, {
+    const ogSvg = await satori(ogTree(title, category, iconDataUrl, featureTag) as never, {
       width: OG_WIDTH,
       height: OG_HEIGHT,
       fonts,
