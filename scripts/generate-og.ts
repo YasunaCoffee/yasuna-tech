@@ -119,6 +119,11 @@ function truncate(text: string, max: number): string {
   return t.slice(0, max - 1) + "…";
 }
 
+/** サムネに大きく表示する特別タグ（タグ名 → バッジ背景色） */
+const FEATURE_TAGS: Record<string, string> = {
+  "論文読んでみた": "#E9A6AF",
+};
+
 /** サムネ固定幅向け：指定行数まで均等に分割（最後の行がはみ出す場合は …） */
 function wrapTextLines(
   text: string,
@@ -331,6 +336,7 @@ function thumbTree(
   category: string,
   author: string,
   iconDataUrl: string | undefined,
+  featureTag?: string,
 ): Record<string, unknown> {
   const frameWidth = 12;
   const outerR = 8;
@@ -432,6 +438,34 @@ function thumbTree(
             ],
           },
         },
+        ...(featureTag
+          ? [{
+            type: "div",
+            props: {
+              style: {
+                display: "flex",
+                flexDirection: "row",
+                flexShrink: 0,
+                paddingTop: 8,
+              },
+              children: [{
+                type: "div",
+                props: {
+                  style: {
+                    fontSize: 22,
+                    fontWeight: 700,
+                    color: "#ffffff",
+                    backgroundColor: FEATURE_TAGS[featureTag] ?? OGP_FRAME_COLOR,
+                    padding: "6px 20px",
+                    borderRadius: 20,
+                    lineHeight: 1.35,
+                  },
+                  children: featureTag,
+                },
+              }],
+            },
+          }]
+          : []),
         {
           type: "div",
           props: {
@@ -597,6 +631,8 @@ async function main(): Promise<void> {
     const slug = stem(path);
     const category = categoryLabel(data);
     const author = authorName(data);
+    const tags = Array.isArray(data.tags) ? data.tags.map(String) : [];
+    const featureTag = tags.find((t) => FEATURE_TAGS[t]);
 
     const ogSvg = await satori(ogTree(title, category, iconDataUrl) as never, {
       width: OG_WIDTH,
@@ -609,7 +645,7 @@ async function main(): Promise<void> {
     console.log(`og: ${relative(ROOT, ogPath)}`);
 
     const thumbSvg = await satori(
-      thumbTree(title, category, author, iconDataUrl) as never,
+      thumbTree(title, category, author, iconDataUrl, featureTag) as never,
       {
         width: THUMB_WIDTH,
         height: THUMB_HEIGHT,
