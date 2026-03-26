@@ -10,12 +10,13 @@ tags:
   - Raspberry Pi Connect
   - 忘却録
   - セットアップ
+  - 公開鍵認証
 draft: false
 ---
 
 こんにちは！yasunaです！
 
-ラズパイ5を初めて買いました！！わくわくしながらOS書き込みの手順を調べて [npaka さんの note](https://note.com/npaka/n/n254a702ca95e) を見ながらやっていたんですが、**SSHが5回以上つながらず**、さらに**Raspberry Pi Connectのトークン取得もどこにも書いてなくて詰まった**のでまとめます。忘却録です。
+ラズパイ5を初めて買いました！！わくわくしながらOS書き込みの手順を調べて [npaka さんの note](https://note.com/npaka/n/n254a702ca95e) を見ながらやっていたんですが、**SSHが5回以上つながらず**、さらに**Raspberry Pi Connectのトークン取得もどこにも書いてなくて詰まった**のでまとめます。忘却録です。**あとから追記**で、本当に効いたのは別ルートだった話も書きました。
 
 ---
 
@@ -92,6 +93,22 @@ cat /Volumes/bootfs/userconf.txt
 
 SDカードをラズパイに戻したら、**必ず電源を一度抜いて入れ直してください**。再起動して初めて `userconf.txt` が読み込まれます。
 
+## 2026-03-26 追記：パスワード認証にこだわっていた
+
+この記事を書いたあとも、**結局ユーザー名を直したり `userconf.txt` を手で置いたりする手順だけでは、自分の環境ではまだ解決しきれませんでした**。そこでモヒにゃぱんちゃんから教えてもらったのが、クラスメソッド DevelopersIO の手順です。
+
+https://dev.classmethod.jp/articles/raspberry-pi-pc-ssh/
+
+要するに、Raspberry Pi Imager の **Remote access** で **Use public key authentication** を選び、先に `ssh-keygen` で作った公開鍵をフォームに貼る、というやり方。**これをやったら一撃でした。**
+
+つまり自分がずっと詰まっていたのは、**SSH のパスワード認証にこだわっていたこと**だったんです。EC2 とか普通に SSH して、公開鍵も何度も触ってきたはずなのに、ラズパイのセットアップだけパスワードに固執してしまっていて、こんなにハマるとは思いませんでした。小並感。
+
+出来上がったときのポストです（埋め込みはやめて画像にしました）。
+
+![X @yasun_ai のポスト（スクショ）](/img/raspberrypi5-x-post.png)
+
+同じように「焼き直しや `userconf` を試してもまだダメ」という人がいたら、**公開鍵の方を先に試す価値**はあると思います。
+
 ---
 
 ## Raspberry Pi Connect編
@@ -162,4 +179,5 @@ rpi-connect signin --auth-key=ここにコピーしたキー
 ## 参考
 
 - npaka「Raspberry Pi 5 のセットアップ」: https://note.com/npaka/n/n254a702ca95e
+- クラスメソッド DevelopersIO「Raspberry Piの初期設定をしてPCからSSH接続するまでの手順」（公開鍵で Imager 設定）: https://dev.classmethod.jp/articles/raspberry-pi-pc-ssh/
 - Raspberry Pi Connect 公式ドキュメント: https://www.raspberrypi.com/documentation/services/connect.html
