@@ -50,54 +50,9 @@ The username must be lowercase and contain only letters numbers underscore and h
 
 このエラーが出たまま「保存」を押しても設定が保存されず、`userconf.txt` が生成されないままSDカードへ書き込まれていました。
 
-### 解決策①：焼き直す
-
-設定エラーが出ないことを確認してから書き込みます：
-
-1. OSを選ぶ
-2. SDカードを選ぶ
-3. ⚙️ **設定ボタンを先に押す**
-   - ✅ ホスト名: `raspi5`
-   - ✅ ユーザー名: `pi`（小文字英数字のみ、これ重要）
-   - ✅ パスワード: 英数字のみのシンプルなもの
-   - ✅ SSH有効化: パスワード認証
-4. 「保存」→「書き込み」
-
-起動まで2〜3分待ってから接続。
-
-### 解決策②：SDカードに手動でファイルを置く（焼き直し不要）
-
-焼いてしまったSDカードをMacに挿して、`bootfs` に2つのファイルを手動で作れば焼き直し不要です。
-
-**① SSHを有効化**
-
-```bash
-touch /Volumes/bootfs/ssh
-```
-
-**② ユーザーとパスワードを設定**
-
-`userconf.txt` にパスワードハッシュを書き込みます。Python 3.13では `crypt` モジュールが削除されているので、`openssl` で生成します：
-
-```bash
-openssl passwd -6 あなたのパスワード
-```
-
-`$6$` で始まる長い文字列が出てきたらそれを使って：
-
-```bash
-echo 'pi:$6$ここにハッシュを貼る' > /Volumes/bootfs/userconf.txt
-
-# 確認
-cat /Volumes/bootfs/userconf.txt
-# pi:$6$... と表示されればOK
-```
-
-SDカードをラズパイに戻したら、**必ず電源を一度抜いて入れ直してください**。再起動して初めて `userconf.txt` が読み込まれます。
-
 ## 2026-03-26 追記：パスワード認証にこだわっていた
 
-この記事を書いたあとも、**結局ユーザー名を直したり `userconf.txt` を手で置いたりする手順だけでは、自分の環境ではまだ解決しきれませんでした**。そこでモヒにゃぱんちゃんから教えてもらったのが、クラスメソッド DevelopersIO の手順です。
+**原因**（Imager の設定が反映されず、`userconf.txt` も `ssh` もなかったこと）は把握できたのですが、**パスワード認証ルートでどうにかしようとする限り、自分の環境ではまだ解決しきれませんでした**。そこでモヒにゃぱんちゃんから教えてもらったのが、クラスメソッド DevelopersIO の手順です。
 
 https://dev.classmethod.jp/articles/raspberry-pi-pc-ssh/
 
@@ -109,7 +64,7 @@ https://dev.classmethod.jp/articles/raspberry-pi-pc-ssh/
 
 ![X @yasun_ai のポスト（スクショ）](/img/raspberrypi5-x-post.png)
 
-同じように「焼き直しや `userconf` を試してもまだダメ」という人がいたら、**公開鍵の方を先に試す価値**はあると思います。
+同じように**パスワード認証で詰まっている人**は、**公開鍵の方を先に試す価値**はあると思います。
 
 ---
 
