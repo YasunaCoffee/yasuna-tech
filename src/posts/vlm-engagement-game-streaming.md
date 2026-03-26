@@ -3,7 +3,7 @@ title: "VLMはゲームを見ても「盛り上がり」がわからない：配
 date: "2026-03-26"
 author: yasuna
 emoji: "🎮"
-category: "メモ"
+category: "論文読んでみた"
 tags:
   - 論文読んでみた
   - VLM

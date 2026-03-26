@@ -3,7 +3,7 @@ title: "AIエージェントのハートビートが記憶を汚染する――M
 date: "2026-03-26"
 author: yasuna
 emoji: "🫀"
-category: "メモ"
+category: "論文読んでみた"
 tags:
   - 論文読んでみた
   - AIエージェント
