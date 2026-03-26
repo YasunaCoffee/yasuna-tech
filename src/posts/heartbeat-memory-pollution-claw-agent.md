@@ -1,5 +1,5 @@
 ---
-title: "AIエージェントのハートビートが記憶を汚染する――Mind Your HEARTBEAT! 論文メモ"
+title: "AIエージェントのハートビートが記憶を汚染する：Mind Your HEARTBEAT! 論文メモ"
 date: "2026-03-26"
 author: yasuna
 emoji: "🫀"
