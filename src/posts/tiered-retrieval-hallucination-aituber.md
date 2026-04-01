@@ -11,6 +11,7 @@ tags:
   - AITuber
   - 個人開発
 draft: false
+description: "AIキャラクターが「知ってるフリ」をしてしまう——知識範囲外の情報を補完して話す問題。段階的RAG論文のanswerability判定から、知らないことを知らないと言えるキャラクター設計を考えた。"
 ---
 
 こんにちは！yasunaです！

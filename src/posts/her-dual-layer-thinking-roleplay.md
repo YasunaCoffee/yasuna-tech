@@ -10,6 +10,7 @@ tags:
   - AITuber
   - 個人開発
 draft: false
+description: "キャラクターのtoneとknowledgeは再現できても「なぜそう言うか」の動機がない——三人称設計の限界とHER論文の一人称思考レイヤーを、AITuber設計の観点から読んだ。"
 ---
 
 こんにちは！yasunaです！

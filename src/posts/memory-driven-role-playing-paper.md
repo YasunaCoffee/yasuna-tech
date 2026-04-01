@@ -11,6 +11,7 @@ tags:
   - ロールプレイ
   - 個人開発
 draft: false
+description: "配信開始から30分で話題が固まってくるのは、Recallingの偏りが原因かもしれない。スタニスラフスキーの演技理論をLLMに応用したMemory-Driven RP論文から、キャラクターが単調にならないための記憶設計を考えた。"
 ---
 
 こんにちは！yasunaです！
