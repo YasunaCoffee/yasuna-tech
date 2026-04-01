@@ -45,8 +45,9 @@ site.process([".md"], (pages) => {
     if (!m || m[1] === "_data") continue;
     const stem = m[1];
     page.data.image = `/og/${stem}.png`;
-    // updated が設定されていればそちらを、なければ date を使う
-    page.data.lastUpdated = page.data.updated ?? page.data.date;
+    // updated が設定されていればそちらを、なければ date を使う（Date オブジェクトに統一）
+    const rawDate = page.data.updated ?? page.data.date;
+    page.data.lastUpdated = rawDate instanceof Date ? rawDate : new Date(String(rawDate));
   }
 });
 
