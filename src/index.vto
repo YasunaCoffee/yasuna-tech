@@ -50,7 +50,7 @@ title: Home
 </header>
 
 <section class="post-grid" aria-label="記事一覧">
-  {{ for post of search.pages("type=post", "date=desc") }}
+  {{ for post of search.pages("type=post", "lastUpdated=desc") }}
   <article class="post-card">
     <a href="{{ post.url }}" class="post-card-link">
       <img
