@@ -38,7 +38,7 @@ site.use(blog());
 site.use(basePath());
 
 /** 記事の OGP 画像パスと lastUpdated（updated ?? date）を設定 */
-site.process([".md"], (pages) => {
+site.preprocess([".md"], (pages) => {
   for (const page of pages) {
     const src = pageSrcPath(page.src);
     const m = src.match(/(?:^|[/\\])posts[/\\]([^/\\]+)\.md$/i);
