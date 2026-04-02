@@ -21,7 +21,7 @@ Cloudflareが「WordPressの精神的後継」と称するCMS、**EmDash**を発
 
 TypeScript製、サーバーレス、Astroベース、MIT License。スペックだけ見てもそそられますが、一番面白いのはプラグインのセキュリティ設計です。
 
-発表：[Introducing EmDash — the spiritual successor to WordPress that solves plugin security](https://blog.cloudflare.com/emdash)（Cloudflare Blog, 2026-04-01）
+発表：[Introducing EmDash — the spiritual successor to WordPress that solves plugin security](https://blog.cloudflare.com/emdash-wordpress?utm_campaign=cf_blog&utm_content=20260401&utm_medium=organic_social&utm_source=twitter/)（Cloudflare Blog, 2026-04-01）
 
 ---
 
@@ -158,6 +158,6 @@ WordPressは24年かけて世界のウェブの土台になりました。その
 
 # 参考
 
-- Cloudflare Blog: Introducing EmDash: https://blog.cloudflare.com/emdash
+- Cloudflare Blog: Introducing EmDash: https://blog.cloudflare.com/emdash-wordpress?utm_campaign=cf_blog&utm_content=20260401&utm_medium=organic_social&utm_source=twitter/
 - EmDash Playground: https://playground.emdash.io
 - GitHub: https://github.com/cloudflare/emdash
