@@ -242,6 +242,10 @@ button.post-share-btn:hover {
   font-weight: 700;
 }
 
+.post-body.body h1 { font-size: clamp(1.25rem, 3vw, 1.5rem); }
+.post-body.body h2 { font-size: clamp(1.15rem, 2.5vw, 1.35rem); }
+.post-body.body h3 { font-size: clamp(1.05rem, 2vw, 1.2rem); }
+
 .post-body.body :is(ul, ol) {
   padding-left: 1.35em;
 }
