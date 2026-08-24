@@ -1,7 +1,2 @@
 type: post
 layout: layouts/post.vto
-
-metas:
-  title: "=title"
-  image: "=image"
-  "twitter:card": summary_large_image

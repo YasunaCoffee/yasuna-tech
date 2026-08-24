@@ -10,6 +10,7 @@ tags:
   - 個人開発
   - AI
 draft: false
+description: "AITuberの仕組みを配信ではなく漫画制作に使ってみた話。ストーリーづくりから漫画生成まですべてAIが行うAI漫画「AITuberぎゃるず」と、その創作システムを紹介します。noteの同名記事からの移植です。"
 ---
 
 > この記事は [note の同名記事](https://note.com/yasunacoffee/n/nf66f6909950b) をブログ用に移植したものです。

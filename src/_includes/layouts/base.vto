@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ it.title || metas.title }} - {{ metas.site }}</title>
+    <title>{{ it.title || site_meta.site }} - {{ site_meta.site }}</title>
 
     <meta name="supported-color-schemes" content="light dark">
     <meta name="theme-color" content="#FEF7FF" media="(prefers-color-scheme: light)">
@@ -12,8 +12,8 @@
     
     <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/zenn.css">
-    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ metas.site }}">
-    <link rel="alternate" href="/feed.json" type="application/json" title="{{ metas.site }}">
+    <link rel="alternate" href="/feed.xml" type="application/atom+xml" title="{{ site_meta.site }}">
+    <link rel="alternate" href="/feed.json" type="application/json" title="{{ site_meta.site }}">
     {{ if it.site_icon }}
     <link rel="icon" type="image/jpeg" href="{{ it.site_icon }}">
     {{ else }}
@@ -27,17 +27,17 @@
     {{ /if }}
     <meta property="og:type" content="{{ it.type == 'post' ? 'article' : 'website' }}">
     <meta property="og:url" content="{{ url |> url(true) }}">
-    <meta property="og:title" content="{{ it.title ? it.title + ' - ' + metas.site : metas.site }}">
-    <meta property="og:description" content="{{ it.description || metas.description }}">
-    <meta property="og:site_name" content="{{ metas.site }}">
+    <meta property="og:title" content="{{ it.title ? it.title + ' - ' + site_meta.site : site_meta.site }}">
+    <meta property="og:description" content="{{ it.description || site_meta.description }}">
+    <meta property="og:site_name" content="{{ site_meta.site }}">
     {{ if ogimg }}
     <meta property="og:image" content="{{ ogimg }}">
     <meta name="twitter:image" content="{{ ogimg }}">
     {{ /if }}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="{{ metas.twitter }}">
-    <meta name="twitter:title" content="{{ it.title ? it.title + ' - ' + metas.site : metas.site }}">
-    <meta name="twitter:description" content="{{ it.description || metas.description }}">
+    <meta name="twitter:site" content="{{ site_meta.twitter }}">
+    <meta name="twitter:title" content="{{ it.title ? it.title + ' - ' + site_meta.site : site_meta.site }}">
+    <meta name="twitter:description" content="{{ it.description || site_meta.description }}">
     {{ it.extra_head?.join("\n") }}
   </head>
   <body>
@@ -46,7 +46,7 @@
         {{ if it.site_icon }}
           <img src="{{ it.site_icon }}" alt="" width="28" height="28" class="site-logo" decoding="async" />
         {{ /if }}
-        <strong>{{ metas.site }}</strong>
+        <strong>{{ site_meta.site }}</strong>
       </a>
 
       <ul class="navbar-links">

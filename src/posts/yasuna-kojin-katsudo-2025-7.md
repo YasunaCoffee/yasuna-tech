@@ -9,6 +9,7 @@ tags:
   - 個人開発
   - AITuber
 draft: false
+description: "2025年7月時点での、yasunaの個人活動まとめです。AITuberぶつぶつシステムやAI Podcastersなど、作ってきたものと使った技術を時系列で並べた自己紹介。noteの同名記事からの移植です。"
 ---
 
 > この記事は [note の同名記事](https://note.com/yasunacoffee/n/n993c74bb47e9) をブログ用に移植したものです。

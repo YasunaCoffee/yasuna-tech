@@ -110,10 +110,45 @@ site.copy("og");
 site.copy("thumbnails");
 
 site.use(markdown({ options: { linkify: true } }));
-site.use(blog());
+/**
+ * feed の既定値はテーマ側で `=metas.site` / `=metas.description` を参照している。
+ * og:*・twitter:* の二重出力を避けるためサイト共通メタを `site_meta` に改名したので、
+ * feed の情報源もそちらへ明示的に向け直す。
+ */
+site.use(blog({
+  feed: {
+    info: {
+      title: "=site_meta.site",
+      description: "=site_meta.description",
+    },
+  },
+}));
 
 /** GitHub Pages のプロジェクトサイト（/REPO/）で /thumbnails 等の絶対パスを直す */
 site.use(basePath());
+
+/**
+ * og:*・twitter:* の重複を落とす（同じキーは最初の 1 つだけ残す）。
+ *
+ * テーマは metas プラグインを常に use しており、無効化オプションが無い。
+ * データ側で `metas: false` にしても、プラグインが登録する object マージで `{}` に
+ * なるため止まらず、og:type=website / twitter:card=summary という既定値が出る。
+ * これは base.vto が出す article / summary_large_image と食い違うので、
+ * プラグインより後に走るこの process で後勝ちのタグを取り除く。
+ * （blog() より後に登録することで実行順を担保している）
+ */
+site.process([".html"], (pages) => {
+  const metaRe = /[^\S\n]*<meta\s+(?:property|name)="((?:og|twitter):[^"]+)"[^>]*>\n?/g;
+  for (const page of pages) {
+    if (typeof page.content !== "string") continue;
+    const seen = new Set<string>();
+    page.content = page.content.replace(metaRe, (tag, key: string) => {
+      if (seen.has(key)) return "";
+      seen.add(key);
+      return tag;
+    });
+  }
+});
 
 /** 記事の OGP 画像パスと lastUpdated（updated ?? date）を設定 */
 site.preprocess([".md"], (pages) => {

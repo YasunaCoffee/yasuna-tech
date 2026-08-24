@@ -12,6 +12,7 @@ tags:
   - セットアップ
   - 公開鍵認証
 draft: false
+description: "ラズパイ5を初めて買って、SSHが5回以上つながらず、Raspberry Pi Connectのトークン取得でも詰まった忘却録。結論はRaspberry Pi ImagerのRemote accessで公開鍵認証を選ぶこと。パスワード認証にこだわって遠回りしました。"
 ---
 
 こんにちは！yasunaです！

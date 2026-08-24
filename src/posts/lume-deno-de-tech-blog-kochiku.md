@@ -11,6 +11,7 @@ tags:
   - 静的サイト
   - Cursor
 draft: false
+description: "Deno + Lume + Simple Blogテーマで技術ブログを立ち上げた記録。フォルダ構成、GitHub Pagesのパスを直すbase_pathプラグイン、OGP・サムネイルの自動生成、フィード本文のURL補正、GitHub Actionsでのデプロイまで、再現の手がかりになるように書きました。"
 ---
 
 個人の技術メモを、検索にも載せやすい形で残したいと思い、静的サイトジェネレータでブログを立ち上げました。**きっかけは**、[逆瀬川ちゃんの「このブログをLumeで作った話」](https://nyosegawa.com/posts/hello-lume/)を読んだことです。Deno での初期化、Simple Blog テーマ、GitHub Pages へのデプロイの流れが一文一文で追いやすく、自分でも同じ系統から試せそうだと感じました。実行環境には **Deno**、生成には **Lume**、見た目の土台には **Simple Blog** テーマを使っています。この記事では、フォルダ構成からデプロイ、途中で噛み合わなかった点の直し方まで、再現の手がかりになるように書きます。

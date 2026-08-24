@@ -11,6 +11,7 @@ tags:
   - Codex
   - 個人開発
 draft: false
+description: "OpenAIのHarness Engineeringの記事を読んで調べたメモ。AIの見張り役を増やすのではなく、失敗しにくいレールと検証を先に敷く設計として理解しました。Claude Codeのskills・hooks・プロジェクト文書の分担と、Codexと併用するならCLIに検査を寄せる話まで。"
 ---
 
 こんにちは！yasunaです！

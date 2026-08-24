@@ -28,10 +28,11 @@ home:
 menu_links: []
 extra_head: []
 
-metas:
+# og:*・twitter:* の出力は layouts/base.vto に一本化している。
+# キー名を `metas` にすると、テーマが常に use する metas プラグインが同じタグを
+# 二重に出すので、プラグインが拾わない名前にしてある
+# (残る既定値の重複は _config.ts の後処理で落とす)。
+site_meta:
   site: yasunaのてっくぶろぐ
   description: AIエージェントと書く Lume ブログ
-  title: "=title"
-  image: "=image"
   twitter: "@yasun_ai"
-  lang: ja

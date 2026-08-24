@@ -10,6 +10,7 @@ tags:
   - Supercell
   - 個人開発
 draft: false
+description: "ハヤカワ五味さん・Saldraさんと3人でSupercell Global AI Game Hack（東京会場）に参加し、モノポリーをリスペクトしたAI組み込みボードゲーム「STOP the PRESSES!」を開発・公開した参加記録。AI Remake部門でベスト10入り（9位）でした。"
 ---
 
 > この記事は [note の同名記事](https://note.com/yasunacoffee/n/nac035466578a) をブログ用に移植したものです。
