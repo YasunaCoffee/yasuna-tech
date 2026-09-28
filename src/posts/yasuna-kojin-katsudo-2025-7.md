@@ -24,7 +24,7 @@ AITuber という簡単に言うと裏側が AI の VTuber のようなものを
 
 **このブログでの実績（2026）:** [2026年の実績](/posts/jisseki-2026/)（AI 漫画創作パイプライン、Supercell AI Game Hack 参加などの要約）
 
-**[yasuna宛のお問い合わせはこちら](https://docs.google.com/forms/d/15DBK0E1t8dryTJ-jPVELlpoI0hUuxXZhZa5cydDN36E/viewform)**
+**[yasuna宛のお問い合わせはこちら](https://forms.gle/iW4kveux1ZFjauCGA)**
 
 日々の開発のことをつぶやいているので、ぜひフォローして応援していただけると嬉しいです。
 
