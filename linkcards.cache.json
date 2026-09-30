@@ -2,7 +2,7 @@
   "https://muilab.com/": {
     "url": "https://muilab.com/",
     "title": "mui Lab",
-    "description": "mui Labは京都に拠点を置くスタートアップです。Calm Technology™の設計思想に基づき、人と人、人と自然が調和する暮らしを実現するための製品やサービスを開発しています。",
+    "description": "mui Lab is a calm technology™ startup based in Kyoto, Japan. Our aim is to create harmony among technology, people and nature.",
     "image": "https://muilab.com/image/common/og.jpg",
     "siteName": "mui Lab"
   },
@@ -24,7 +24,7 @@
     "url": "https://www.thelightphone.com/",
     "title": "The Light Phone",
     "description": "Light is a radically different technology company. We design beautiful tools that respect and empower our users and our first product is The Light Phone.",
-    "image": "https://www.thelightphone.com/assets/images/social-share-card.jpg",
+    "image": "https://www.thelightphone.com/assets/images/social-share-card-flip.jpg",
     "siteName": "thelightphone.com"
   },
   "https://daylightcomputer.com/": {
@@ -80,7 +80,49 @@
     "url": "https://github.com/YasunaCoffee/utau-chan",
     "title": "GitHub - YasunaCoffee/utau-chan",
     "description": "Contribute to YasunaCoffee/utau-chan development by creating an account on GitHub.",
-    "image": "https://opengraph.githubassets.com/16663bcbc48c523f3e0de2c591fabc996aec25805935ce1403bbeba061558296/YasunaCoffee/utau-chan",
+    "image": "https://opengraph.githubassets.com/d6fea2eee7bb24e17c112dd6f7316d77210998fa285ffcb5b31826ed5aee25b4/YasunaCoffee/utau-chan",
     "siteName": "GitHub"
+  },
+  "https://openai.com/ja-JP/index/devday-2026-recap/": {
+    "url": "https://openai.com/ja-JP/index/devday-2026-recap/",
+    "title": "openai.com",
+    "description": "",
+    "image": "",
+    "siteName": "openai.com"
+  },
+  "https://x.com/GOROman/status/2105067908565221696": {
+    "url": "https://x.com/GOROman/status/2105067908565221696",
+    "title": "NULL=RUN (@GOROman) on X",
+    "description": "I tried running a Super Mario-style game built with Codex on the @modretro Chromatic I got at #OpenAIDevDay!\n\n@OpenAIDevs @pvncher",
+    "image": "https://pbs.twimg.com/amplify_video_thumb/2105067835492036608/img/ueHMAkiP026G96BL?format=webp&name=large",
+    "siteName": "X (formerly Twitter)"
+  },
+  "https://modretro.com/products/chromatic-tetris-bundle": {
+    "url": "https://modretro.com/products/chromatic-tetris-bundle",
+    "title": "Chromatic + Tetris Bundle",
+    "description": "Chromatic is the ultimate cartridge console for people who simply want to game. No downloads, no logins, no interruptions–just plug in a cartridge and start playing. It’s gaming the way it used to ...",
+    "image": "https://modretro.com/cdn/shop/files/Gorilla_Cloud_Front_71e80790-eb01-40c0-99af-32ea478765be.webp?v=1786487971&width=1200",
+    "siteName": "ModRetro"
+  },
+  "https://x.com/modretro/status/2105010501306708337": {
+    "url": "https://x.com/modretro/status/2105010501306708337",
+    "title": "ModRetro (@modretro) on X",
+    "description": "ModRetro and @OpenAI are collaborating on game creation for the Chromatic. \n\nThis partnership brings together ModRetro’s handheld hardware and Codex, OpenAI’s coding agent.",
+    "image": "https://pbs.twimg.com/media/HTaU0HYaUAEVN1d?format=webp&name=large",
+    "siteName": "X (formerly Twitter)"
+  },
+  "https://support.modretro.com/en_us/chromatic-devday-edition-quickstart-guid-By1iOlcMg": {
+    "url": "https://support.modretro.com/en_us/chromatic-devday-edition-quickstart-guid-By1iOlcMg",
+    "title": "Chromatic: DevDay Edition Quickstart Guide",
+    "description": "Welcome to the QuickStart Guide for the ModRetro Chromatic Codex Edition Following these steps will allow you to dream up your own Chromatic game  First le",
+    "image": "",
+    "siteName": "support.modretro.com"
+  },
+  "https://developers.openai.com/modretro": {
+    "url": "https://developers.openai.com/modretro",
+    "title": "ModRetro",
+    "description": "Play the ModRetro Game Boy Color collection.",
+    "image": "",
+    "siteName": "developers.openai.com"
   }
 }
