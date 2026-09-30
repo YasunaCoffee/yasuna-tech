@@ -62,6 +62,12 @@ AI に聞いてまとめてもらった範囲だと、こんな感じでした�
 
 ここで一番気になったのがこれです。
 
+ModRetro の公式アカウントも、**ModRetro と OpenAI が Chromatic 向けのゲーム作りで協力している**と発表していました。ModRetro の携帯機と、OpenAI のコーディングエージェント Codex を結びつけるパートナーシップだそうです。
+
+https://x.com/modretro/status/2105010501306708337
+
+ポストの動画では、DevDay 2026 のステージでサム・アルトマンさんが透明な Chromatic を手に持って説明しています。OpenAI の DevDay で、ゲームボーイ風の携帯機が紹介されているのはなんだか不思議な光景でした。
+
 DevDay で配られていたのは **Chromatic の DevDay Edition** で、Codex でゲームを作って、そのまま実機のカートリッジに書き込めるようになっています。
 
 ModRetro の公式 Quickstart（Chromatic: DevDay Edition Quickstart Guide）を読んでみたら、流れはこうでした。
