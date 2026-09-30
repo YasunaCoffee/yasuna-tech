@@ -24,7 +24,7 @@ https://modretro.com/products/chromatic-tetris-bundle
 
 それでも「自作ゲームって遊べるのかな？」と AI に聞きながら調べていったら、**ゲームを作って遊ぶところまでは、本体がなくてもエミュレータで始められそう**だと分かってきました。
 
-端的に言うと、この記事は「買う前にエミュレータでやってみようかな」という、やる前のメモです。まだ試していないので、手順は公式のページで確かめてから進めてください。
+端的に言うと、この記事は「買う前にエミュレータでやってみようかな」という、やる前のメモです。まだ試していないので、手順は公式の Quickstart で確かめてから進めてください。
 
 # Chromatic ってどんな機械？
 
@@ -48,57 +48,77 @@ AI に聞いてまとめてもらった範囲だと、こんな感じでした�
 
 ちなみに、どれも**自作・正当な homebrew 前提**の話です。市販ソフトの吸い出しなどには使わないように、公式も書いているそうです。
 
-# OpenAI が透明な Chromatic を配っているらしい
+# Codex でゲームボーイのゲームが作れる
 
 ここで一番気になったのがこれです。
 
-OpenAI の DevDay で、**透明な Chromatic（DevDay Edition）** が配られていて、Codex でゲームボーイのゲームを作って、そのまま実機のカートリッジに書き込める流れが用意されているそうです。
+OpenAI の DevDay で **Chromatic の DevDay Edition** が配られていて、Codex でゲームを作って、そのまま実機のカートリッジに書き込めるようになっています。
 
-でも、実際はどうかというと、透明な本体をもらった人でも**最初の開発はほぼエミュレータ**なんですよね。
+ModRetro の公式 Quickstart（Chromatic: DevDay Edition Quickstart Guide）を読んでみたら、流れはこうでした。
 
-1. Codex に **ModRetro Chromatic のプラグイン** を入れる
-2. Codex にゲームを作ってもらう
-3. **ブラウザの中のエミュレータ**ですぐ遊んで確かめる
-4. 実機があれば、USB で画面を流して操作感を見る
-5. よければ空のカートリッジに書き込む
+1. **Chromatic のファームウェアを更新する**（Chromatic Firmware Updater）
+2. 付属の**アクティベーションコードで Developer-Mode を有効にする**（Firmware Updater で Ctrl-I、Mac は Cmd-I）。これで、作ったゲームを付属のカートリッジに書き込めるようになる
+3. **Codex のデスクトップアプリ**を入れる（https://chatgpt.com/codex/）
+4. Codex の Plugins タブで **「ModRetro Chromatic」プラグイン**を入れる
+5. チャットで `@` を押して ModRetro Chromatic Plugin を付けて、作りたいゲームを説明する
+6. **Codex の中のブラウザプレビュー（エミュレータ）**で遊んで確かめる
+7. 実機に**映像を流して**操作感を確かめる
+8. よければ**カートリッジに書き込む**
 
-ここで作られるのは普通の .gb / .gbc の ROM なので、手順 3 まではゲーム機がなくても進められます。
+1・2 と 7・8 は Chromatic の本体がある人向けです。
 
-**本体がいるのは、作ったゲームをカートリッジに焼いて持ち歩くところから。** ここがわたし的にはうれしいポイントでした。
+実際はどうかというと、**3〜6 だけならゲーム機を持っていなくても進められそう**なんですよね。プラグインは「ゲームボーイカラー互換の機械とエミュレータ向け」のゲームを作ってくれるので、作って遊んで直すところまでは、パソコンの中で回せます。わたし的にはここがうれしいポイントでした。
 
-# エミュレータのやり方はどこにまとまってる？
+ちなみに、実機で確かめる 7 も、**本体の中でゲームが動くわけではなく、パソコンのエミュレータで動かした画面と音を Chromatic に流す**方式だそうです。
 
-公式の Quickstart がいちばんまとまっているそうです。「Playtesting Your Game in Emulator」の項目がエミュレータの手順です。
+# エミュレータで遊ぶまでの手順
 
-公式の流れでは、Codex で @ModRetro Chromatic Plugin を付けて、こう頼むとブラウザの中でエミュレータが開くそうです。
+公式 Quickstart に、そのまま Codex に投げられる例が載っています。
+
+プラグインを入れたら、まず準備をお願いします。
 
 ```text
-Build my selected game and open it in the playable browser preview.
-Reuse that preview as we make changes.
+Set up @ModRetro Chromatic Plugin so I can create games, build ROMs, and run automated playtests. Check what's already installed and prepare the missing dependencies.
 ```
 
-別でエミュレータを入れなくていいのは気楽！
+ゲームは **GB Studio** のプロジェクトとして作られます。新しく作るならこんな感じ（種を3つ集めて植えると門が開く、小さな探索ゲーム）。
 
-ほかの人が Codex で作ったゲームを遊べるページもあるそうです。
+```text
+Create and select a new GB Studio project at /absolute/existing-parent/MoonGarden. Make a small exploration game where a gardener collects three seeds and plants them to unlock a gate.
+```
 
-https://developers.openai.com/modretro/
+プラグインには **「Wrecklight」** というお手本のゲームも入っていて、それを改造して自分のゲームにすることもできます。
+
+そして、エミュレータで遊ぶのはこれ。
+
+```text
+Build my selected game and open it in the playable browser preview. Reuse that preview as we make changes.
+```
+
+Codex が直すたびに、同じプレビューで遊び直せます。別でエミュレータを入れなくていいのは気楽！
+
+ほかにも、シーンを足す、キャラのドット絵と歩きアニメを作る、パレットを変える、**ゲームボーイの制限（スプライトや背景の数など）に引っかかっていないか点検する**、といったお願いの例が並んでいました。制限の点検まで頼めるのは、ゲームボーイ初心者にはありがたいです。
+
+ほかの人が作ったゲームを見たり、自分のゲームを共有したりできる場所もあります。
+
+https://modretro.openai.chatgpt.site/
+
+注意書きもしっかり書かれていて、このプラグインは**自分で作ったオリジナルの ROM 専用**です。市販ゲームのエミュレーションや、プロテクトの回避には使えません。
 
 ちなみに、AI には「作り方全体は ModRetro のブログにまとまっている」とも教えてもらったのですが、開いてみたら中身はちがいました。
 
 https://modretro.com/blogs/blog/create-for-chromatic
 
-2024年6月の、**インディーゲーム開発者に「Chromatic 向けにゲームを作ろう」と呼びかける記事**でした。ゲームボーイで育った思い出や、物理カートリッジで遊んでもらいたいという想いが書かれていて、手順の説明ではありません。読んでいて気持ちのいい文章ではあるので、雰囲気をつかむにはおすすめです。
+2024年6月の、**インディーゲーム開発者に「Chromatic 向けにゲームを作ろう」と呼びかける記事**でした。ゲームボーイで育った思い出や、物理カートリッジで遊んでもらいたいという想いが書かれていて、手順の説明ではありません。
 
 AI に調べてもらうと早いけど、こういうズレは混ざるので、**手順は公式の Quickstart を自分の目で見る**のがよさそうです。
-
-発表されたばかりなので、日本語の解説はまだほとんど見当たりませんでした。
 
 # まとめ
 
 - ModRetro Chromatic は、ゲームボーイのカートリッジが遊べるいまどきの携帯機
 - 自作ゲームは、カートリッジに入れれば遊べる
-- **Codex でゲームを作って遊ぶところまでは、ブラウザのエミュレータで完結しそう**
-- 本体が必要になるのは、カートリッジに焼いて持ち歩くところから
+- **Codex のプラグインでゲームを作って、ブラウザのエミュレータで遊ぶところまでは本体なしで進められそう**
+- 本体（DevDay Edition）が必要になるのは、実機に映像を流す・カートリッジに書き込むところから
 
 というわけで、ゲーム機を持っていないわたしでも、まずはエミュレータで1本作ってみようかなと思っています。
 
