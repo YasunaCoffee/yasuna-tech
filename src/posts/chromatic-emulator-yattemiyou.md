@@ -14,11 +14,11 @@ description: "ゲームボーイのカートリッジが遊べる携帯機 ModRe
 
 # はじめに
 
-きっかけは、OpenAI の DevDay 2026 のまとめ記事でした。
+きっかけは、OpenAI の DevDay 2026 でした。
 
 https://openai.com/ja-JP/index/devday-2026-recap/
 
-そこで **ModRetro Chromatic** という携帯ゲーム機を見かけて、正直に一言。**ほしい。**
+まとめ記事には、dots や Codex クラウド、ChatGPT のプラグイン拡張機能など、20を超える発表がずらっと並んでいます。その DevDay にあわせて、**ModRetro Chromatic** という携帯ゲーム機の「DevDay Edition」と、Codex でゲームを作れるプラグインが出ていたのを知って、正直に一言。**ほしい。**
 
 https://modretro.com/products/chromatic-tetris-bundle
 
