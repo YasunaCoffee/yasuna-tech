@@ -34,6 +34,7 @@ const ICON_CANDIDATES: [string, string][] = [
 ];
 
 const SITE_NAME = "yasunaのてっくぶろぐ";
+const SITE_DESCRIPTION = "AIエージェントと書く技術ブログ";
 const SITE_URL = Deno.env.get("SITE_URL") ??
   "https://yasunacoffee.github.io/yasuna-tech/";
 
@@ -285,8 +286,8 @@ function heiseiCard(opt: {
                   display: "flex",
                   alignItems: "center",
                   gap: px(16),
-                  margin: `0 ${px(28)}px`,
-                  padding: `${px(14)}px ${px(16)}px ${px(18)}px`,
+                  margin: `0 ${px(28)}px 0 0`,
+                  padding: `${px(10)}px ${px(16)}px ${px(12)}px ${px(18)}px`,
                   borderTop: `${px(3)}px dashed #A9D6F5`,
                 },
                 children: [
@@ -295,9 +296,9 @@ function heiseiCard(opt: {
                       type: "img",
                       props: {
                         src: iconDataUrl,
-                        width: px(64),
-                        height: px(64),
-                        style: { borderRadius: px(32), border: `${px(3)}px solid ${H.pink}` },
+                        width: px(104),
+                        height: px(104),
+                        style: { borderRadius: px(52), border: `${px(4)}px solid ${H.pink}`, flexShrink: 0 },
                       },
                     }]
                     : []),
@@ -306,7 +307,8 @@ function heiseiCard(opt: {
                     props: {
                       style: { display: "flex", flexDirection: "column", gap: px(4) },
                       children: [
-                        { type: "div", props: { style: { fontSize: px(30), color: H.frameDk }, children: SITE_NAME } },
+                        { type: "div", props: { style: { fontSize: px(32), color: H.frameDk }, children: SITE_NAME } },
+                        { type: "div", props: { style: { fontSize: px(20), color: H.ink }, children: SITE_DESCRIPTION } },
                         {
                           type: "div",
                           props: {
@@ -367,7 +369,6 @@ function thumbTree(
   return heiseiCard({ u: 0.8, band: category, ribbon: featureTag, body: titleBlock(title, 0.8), iconDataUrl });
 }
 
-const SITE_DESCRIPTION = "AIエージェントと書く Lume ブログ";
 
 function topOgTree(iconDataUrl: string | undefined): Record<string, unknown> {
   return heiseiCard({
@@ -379,7 +380,6 @@ function topOgTree(iconDataUrl: string | undefined): Record<string, unknown> {
         style: { display: "flex", flexDirection: "column", gap: 18 },
         children: [
           { type: "div", props: { style: { fontSize: 72, color: H.frameDk }, children: SITE_NAME } },
-          { type: "div", props: { style: { fontSize: 34, color: H.ink }, children: SITE_DESCRIPTION } },
         ],
       },
     },
