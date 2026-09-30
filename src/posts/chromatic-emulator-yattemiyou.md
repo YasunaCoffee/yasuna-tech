@@ -89,7 +89,11 @@ ModRetro の公式 Quickstart（Chromatic: DevDay Edition Quickstart Guide）を
 
 # エミュレータで遊ぶまでの手順
 
-公式 Quickstart に、そのまま Codex に投げられる例が載っています。
+詳しいことは、OpenAI の開発者向けページにまとまっています。
+
+https://developers.openai.com/modretro
+
+ModRetro 側の公式 Quickstart にも、そのまま Codex に投げられる例が載っています。
 
 プラグインを入れたら、まず準備をお願いします。
 
