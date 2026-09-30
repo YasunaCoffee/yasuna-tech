@@ -18,7 +18,13 @@ description: "ゲームボーイのカートリッジが遊べる携帯機 ModRe
 
 https://openai.com/ja-JP/index/devday-2026-recap/
 
-まとめ記事には、dots や Codex クラウド、ChatGPT のプラグイン拡張機能など、20を超える発表がずらっと並んでいます。その DevDay にあわせて、**ModRetro Chromatic** という携帯ゲーム機の「DevDay Edition」と、Codex でゲームを作れるプラグインが出ていたのを知って、正直に一言。**ほしい。**
+まとめ記事には、dots や Codex クラウド、ChatGPT のプラグイン拡張機能など、20を超える発表がずらっと並んでいます。
+
+そんな中、X で GOROman さんのポストが流れてきました。DevDay の参加者に**透明な ModRetro Chromatic がプレゼントされていて**、Codex で作ったスーパーマリオ風のゲームをその本体で動かしていたんです。
+
+https://x.com/GOROman/status/2105067908565221696
+
+透明なゲームボーイっぽい本体で、AI が作ったゲームが動いている。これを見て、正直に一言。**ほしい。**
 
 https://modretro.com/products/chromatic-tetris-bundle
 
@@ -56,7 +62,7 @@ AI に聞いてまとめてもらった範囲だと、こんな感じでした�
 
 ここで一番気になったのがこれです。
 
-OpenAI の DevDay で **Chromatic の DevDay Edition** が配られていて、Codex でゲームを作って、そのまま実機のカートリッジに書き込めるようになっています。
+DevDay で配られていたのは **Chromatic の DevDay Edition** で、Codex でゲームを作って、そのまま実機のカートリッジに書き込めるようになっています。
 
 ModRetro の公式 Quickstart（Chromatic: DevDay Edition Quickstart Guide）を読んでみたら、流れはこうでした。
 
