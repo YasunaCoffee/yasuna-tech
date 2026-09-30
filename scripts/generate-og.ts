@@ -381,7 +381,8 @@ function topOgTree(iconDataUrl: string | undefined): Record<string, unknown> {
       props: {
         style: { display: "flex", flexDirection: "column", gap: 18 },
         children: [
-          { type: "div", props: { style: { fontSize: 72, color: H.frameDk }, children: SITE_NAME } },
+          { type: "div", props: { style: { fontSize: 60, color: H.ink }, children: "記事はスヤスヤで読めます" } },
+          { type: "div", props: { style: { fontSize: 40, color: H.pink }, children: "suyasuya.me/tech へどうぞ!" } },
         ],
       },
     },
