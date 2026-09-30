@@ -72,6 +72,8 @@ DevDay で配られていたのは **Chromatic の DevDay Edition** で、Codex 
 
 ModRetro の公式 Quickstart（Chromatic: DevDay Edition Quickstart Guide）を読んでみたら、流れはこうでした。
 
+https://support.modretro.com/en_us/chromatic-devday-edition-quickstart-guid-By1iOlcMg
+
 1. **Chromatic のファームウェアを更新する**（Chromatic Firmware Updater）
 2. 付属の**アクティベーションコードで Developer-Mode を有効にする**（Firmware Updater で Ctrl-I、Mac は Cmd-I）。これで、作ったゲームを付属のカートリッジに書き込めるようになる
 3. **Codex のデスクトップアプリ**を入れる（https://chatgpt.com/codex/）
