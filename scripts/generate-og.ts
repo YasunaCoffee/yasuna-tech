@@ -266,21 +266,7 @@ function heiseiCard(opt: {
                 ],
               },
             },
-            // 中身
-            {
-              type: "div",
-              props: {
-                style: {
-                  display: "flex",
-                  flex: 1,
-                  alignItems: "center",
-                  padding: `${px(18)}px ${px(44)}px`,
-                  minHeight: 0,
-                },
-                children: [body],
-              },
-            },
-            // 下段:アイコン＋ブログ名＋アドレス(ドット文字)
+            // 上段:アイコン＋ブログ名＋アドレス(ドット文字)。帯のすぐ下に置く
             {
               type: "div",
               props: {
@@ -290,7 +276,7 @@ function heiseiCard(opt: {
                   gap: px(16),
                   margin: `0 ${px(28)}px 0 0`,
                   padding: `${px(10)}px ${px(16)}px ${px(12)}px ${px(18)}px`,
-                  borderTop: `${px(3)}px dashed #A9D6F5`,
+                  borderBottom: `${px(3)}px dashed #A9D6F5`,
                 },
                 children: [
                   ...(iconDataUrl
@@ -322,6 +308,20 @@ function heiseiCard(opt: {
                     },
                   },
                 ],
+              },
+            },
+            // 中身
+            {
+              type: "div",
+              props: {
+                style: {
+                  display: "flex",
+                  flex: 1,
+                  alignItems: "center",
+                  padding: `${px(18)}px ${px(44)}px`,
+                  minHeight: 0,
+                },
+                children: [body],
               },
             },
           ],
