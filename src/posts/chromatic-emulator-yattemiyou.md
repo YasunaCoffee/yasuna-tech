@@ -16,17 +16,23 @@ description: "ゲームボーイのカートリッジが遊べる携帯機 ModRe
 
 きっかけは、OpenAI の DevDay 2026 でした。
 
+```linkcard
 https://openai.com/ja-JP/index/devday-2026-recap/
+```
 
 まとめ記事には、dots や Codex クラウド、ChatGPT のプラグイン拡張機能など、20を超える発表がずらっと並んでいます。
 
 そんな中、X で GOROman さんのポストが流れてきました。DevDay の参加者に**透明な ModRetro Chromatic がプレゼントされていて**、Codex で作ったスーパーマリオ風のゲームをその本体で動かしていたんです。
 
+```linkcard
 https://x.com/GOROman/status/2105067908565221696
+```
 
 透明なゲームボーイっぽい本体で、AI が作ったゲームが動いている。これを見て、正直に一言。**ほしい。**
 
+```linkcard
 https://modretro.com/products/chromatic-tetris-bundle
+```
 
 ゲームボーイ／ゲームボーイカラーのカートリッジがそのまま遊べる、いまどきの携帯機です。
 
@@ -64,7 +70,9 @@ AI に聞いてまとめてもらった範囲だと、こんな感じでした�
 
 ModRetro の公式アカウントも、**ModRetro と OpenAI が Chromatic 向けのゲーム作りで協力している**と発表していました。ModRetro の携帯機と、OpenAI のコーディングエージェント Codex を結びつけるパートナーシップだそうです。
 
+```linkcard
 https://x.com/modretro/status/2105010501306708337
+```
 
 ポストの動画では、DevDay 2026 のステージでサム・アルトマンさんが透明な Chromatic を手に持って説明しています。OpenAI の DevDay で、ゲームボーイ風の携帯機が紹介されているのはなんだか不思議な光景でした。
 
@@ -72,7 +80,9 @@ DevDay で配られていたのは **Chromatic の DevDay Edition** で、Codex 
 
 ModRetro の公式 Quickstart（Chromatic: DevDay Edition Quickstart Guide）を読んでみたら、流れはこうでした。
 
+```linkcard
 https://support.modretro.com/en_us/chromatic-devday-edition-quickstart-guid-By1iOlcMg
+```
 
 1. **Chromatic のファームウェアを更新する**（Chromatic Firmware Updater）
 2. 付属の**アクティベーションコードで Developer-Mode を有効にする**（Firmware Updater で Ctrl-I、Mac は Cmd-I）。これで、作ったゲームを付属のカートリッジに書き込めるようになる
@@ -93,7 +103,9 @@ https://support.modretro.com/en_us/chromatic-devday-edition-quickstart-guid-By1i
 
 詳しいことは、OpenAI の開発者向けページ「**ModRetro + Codex**」にまとまっています。
 
+```linkcard
 https://developers.openai.com/modretro
+```
 
 開いてみたら、これが**めちゃくちゃかわいい**んです！
 
