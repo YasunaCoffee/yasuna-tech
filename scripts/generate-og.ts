@@ -35,6 +35,8 @@ const ICON_CANDIDATES: [string, string][] = [
 
 const SITE_NAME = "yasunaのてっくぶろぐ";
 const SITE_DESCRIPTION = "AIエージェントと書く技術ブログ";
+/** サムネに出す住所。記事はスヤスヤ(suyasuya.me/tech/)にも載っているので、そちらを顔にする */
+const SITE_HOME = "suyasuya.me/tech";
 const SITE_URL = Deno.env.get("SITE_URL") ??
   "https://yasunacoffee.github.io/yasuna-tech/";
 
@@ -313,7 +315,7 @@ function heiseiCard(opt: {
                           type: "div",
                           props: {
                             style: { fontSize: px(22), color: H.sub, fontFamily: "DotGothic16, Noto Sans JP" },
-                            children: new URL(SITE_URL).hostname,
+                            children: SITE_HOME,
                           },
                         },
                       ],
