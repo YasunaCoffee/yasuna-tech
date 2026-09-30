@@ -14,7 +14,11 @@ description: "ゲームボーイのカートリッジが遊べる携帯機 ModRe
 
 # はじめに
 
-**ModRetro Chromatic** という携帯ゲーム機を見かけて、正直に一言。**ほしい。**
+きっかけは、OpenAI の DevDay 2026 のまとめ記事でした。
+
+https://openai.com/ja-JP/index/devday-2026-recap/
+
+そこで **ModRetro Chromatic** という携帯ゲーム機を見かけて、正直に一言。**ほしい。**
 
 https://modretro.com/products/chromatic-tetris-bundle
 
