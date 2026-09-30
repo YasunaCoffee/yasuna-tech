@@ -317,8 +317,8 @@ function heiseiCard(opt: {
                 style: {
                   display: "flex",
                   flex: 1,
-                  alignItems: "center",
-                  padding: `${px(18)}px ${px(44)}px`,
+                  alignItems: "flex-start",
+                  padding: `${px(26)}px ${px(44)}px ${px(18)}px`,
                   minHeight: 0,
                 },
                 children: [body],
