@@ -62,9 +62,17 @@ AI に聞いてまとめてもらった範囲だと、こんな感じでした�
 
 ここで一番気になったのがこれです。
 
+ModRetro の公式アカウントも、**ModRetro と OpenAI が Chromatic 向けのゲーム作りで協力している**と発表していました。ModRetro の携帯機と、OpenAI のコーディングエージェント Codex を結びつけるパートナーシップだそうです。
+
+https://x.com/modretro/status/2105010501306708337
+
+ポストの動画では、DevDay 2026 のステージでサム・アルトマンさんが透明な Chromatic を手に持って説明しています。OpenAI の DevDay で、ゲームボーイ風の携帯機が紹介されているのはなんだか不思議な光景でした。
+
 DevDay で配られていたのは **Chromatic の DevDay Edition** で、Codex でゲームを作って、そのまま実機のカートリッジに書き込めるようになっています。
 
 ModRetro の公式 Quickstart（Chromatic: DevDay Edition Quickstart Guide）を読んでみたら、流れはこうでした。
+
+https://support.modretro.com/en_us/chromatic-devday-edition-quickstart-guid-By1iOlcMg
 
 1. **Chromatic のファームウェアを更新する**（Chromatic Firmware Updater）
 2. 付属の**アクティベーションコードで Developer-Mode を有効にする**（Firmware Updater で Ctrl-I、Mac は Cmd-I）。これで、作ったゲームを付属のカートリッジに書き込めるようになる
@@ -83,7 +91,19 @@ ModRetro の公式 Quickstart（Chromatic: DevDay Edition Quickstart Guide）を
 
 # エミュレータで遊ぶまでの手順
 
-公式 Quickstart に、そのまま Codex に投げられる例が載っています。
+詳しいことは、OpenAI の開発者向けページ「**ModRetro + Codex**」にまとまっています。
+
+https://developers.openai.com/modretro
+
+開いてみたら、これが**めちゃくちゃかわいい**んです！
+
+ドット絵のゲーム機みたいな画面に、Codex で作られたゲームがカードでずらっと並んでいて、FlapGPT、Ash & Oath、Codex Land、Arc Pocket、Seedy's Sweet Garden……と、タイトル画面を見ているだけで楽しい。
+
+しかも、ゲームを選ぶと**ピンクの Chromatic の絵の中で、そのままブラウザで遊べます**。本体の色も何色かから選べて、操作はキーボード（矢印キーで移動、X かスペースで A、Z で B、Enter でスタート、M でセレクト）。ROM のダウンロードボタンもありました。
+
+**ゲーム機を持っていなくても、ブラウザでもう遊べる。** ここはもう「〜そう」じゃなくて、実際に確かめられました。右上の「Build your game」から、自分で作る方にも進めます。
+
+ModRetro 側の公式 Quickstart にも、そのまま Codex に投げられる例が載っています。
 
 プラグインを入れたら、まず準備をお願いします。
 
@@ -109,25 +129,14 @@ Codex が直すたびに、同じプレビューで遊び直せます。別で�
 
 ほかにも、シーンを足す、キャラのドット絵と歩きアニメを作る、パレットを変える、**ゲームボーイの制限（スプライトや背景の数など）に引っかかっていないか点検する**、といったお願いの例が並んでいました。制限の点検まで頼めるのは、ゲームボーイ初心者にはありがたいです。
 
-ほかの人が作ったゲームを見たり、自分のゲームを共有したりできる場所もあります。
-
-https://modretro.openai.chatgpt.site/
-
 注意書きもしっかり書かれていて、このプラグインは**自分で作ったオリジナルの ROM 専用**です。市販ゲームのエミュレーションや、プロテクトの回避には使えません。
-
-ちなみに、AI には「作り方全体は ModRetro のブログにまとまっている」とも教えてもらったのですが、開いてみたら中身はちがいました。
-
-https://modretro.com/blogs/blog/create-for-chromatic
-
-2024年6月の、**インディーゲーム開発者に「Chromatic 向けにゲームを作ろう」と呼びかける記事**でした。ゲームボーイで育った思い出や、物理カートリッジで遊んでもらいたいという想いが書かれていて、手順の説明ではありません。
-
-AI に調べてもらうと早いけど、こういうズレは混ざるので、**手順は公式の Quickstart を自分の目で見る**のがよさそうです。
 
 # まとめ
 
 - ModRetro Chromatic は、ゲームボーイのカートリッジが遊べるいまどきの携帯機
 - 自作ゲームは、カートリッジに入れれば遊べる
-- **Codex のプラグインでゲームを作って、ブラウザのエミュレータで遊ぶところまでは本体なしで進められそう**
+- **みんなが Codex で作ったゲームは、ブラウザでもう遊べる**（ModRetro + Codex のページがかわいい）
+- 自分で作ってエミュレータで遊ぶところまでも、本体なしで進められそう
 - 本体（DevDay Edition）が必要になるのは、実機に映像を流す・カートリッジに書き込むところから
 
 というわけで、ゲーム機を持っていないわたしでも、まずはエミュレータで1本作ってみようかなと思っています。
