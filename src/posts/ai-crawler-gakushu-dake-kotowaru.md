@@ -163,11 +163,30 @@ https://github.com/YasunaCoffee/futon
 
 robots.txt の最後の `Sitemap:` 行は、この sitemap.xml の場所を検索エンジンに教えるためのものです。
 
+## futon なら最初から入っています
+
+「公開するときに必ずやる」なら、忘れないようにエンジンに入れてしまえばいい。ということで、futon 0.5.0 から **干すたびに robots.txt を自動で書き出す**ようにしました。
+
+- AI の学習・収集用クローラーは断る
+- AI 検索（リンクで紹介するもの）とふつうの検索は通す
+- `site.json` に公開URLがあれば `Sitemap:` 行も付く
+- 自分で `public/robots.txt` を置けばそちらが優先。全部通したいなら `site.json` に `"aiCrawlers": "allow"`
+
+なので、futon でサイトを作れば**何も書かなくても公開初日から対策済み**です。雛形の AI 向け手順書（AGENTS.md）にも「公開する前に」として、Cloudflare 側のブロックと予算アラートのことを書いておきました。
+
+```bash
+npm create futon@latest my-site
+```
+
+8種のきせかえはここで試せます。
+
+https://futon.suyasuya.me/
+
 # まとめ
 
 - 告知していない個人サイトにも、AIクローラーは**1週間で約2000回**来ていた
 - 困るのは攻撃ではなく、**持っていくだけで人を連れてこないこと**と、**従量課金だと請求が膨らむこと**
-- だから**サイト公開時に必ずやる**
+- だから**サイト公開時に必ずやる**（futon なら最初から入っている）
 - **学習用は断って、AI検索とふつうの検索は通す**のがちょうどよかった
 - robots.txt はお願いなので、**Cloudflare 側でも止める**
 - Google の学習だけ止めたいなら **Google-Extended**。Googlebot は止めない
