@@ -29,6 +29,9 @@
   Lume を動かす。記事を追加・編集したら `deno task dev` を使うとサムネが更新される。
 - **サムネはコミットする。** 記事を足したら `deno task og` を流して、`src/thumbnails/` と `src/og/` の画像も
   同じ変更に入れる。スヤスヤ(suyasuya.me)が `src/thumbnails/` をそのまま取り込むので、古いまま・無いままだとそちらに出ない。
+- **本家はスヤスヤ（suyasuya.me/tech/）。** GitHub Pages 側のトップと記事は、canonical・og:url をスヤスヤに向けて、
+  開いた人もスヤスヤの同じ記事へ移す（`_config.ts`）。スヤスヤは毎朝このリポジトリを取り込むので、
+  **新しい記事は取り込まれるまでスヤスヤ側に無い**。急ぐときはスヤスヤで `npm run sync -- --tech ../yasuna-tech` を流す。
 - **トップページは本文も抜粋も出さない。** 自動生成サムネ `/thumbnails/{slug}.png` のグリッドのみ。
   記事の第一印象はサムネで決まる。
 - **`category` を省略すると、先頭の `tags` がサムネ上のカテゴリ表示になる。**

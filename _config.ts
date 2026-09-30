@@ -124,6 +124,33 @@ site.process([".html"], (pages) => {
   }
 });
 
+/**
+ * 本家はスヤスヤ(suyasuya.me/tech/)。記事はスヤスヤが毎朝取り込んでいる。
+ * GitHub Pages 側の記事とトップは、canonical・og:url をスヤスヤに向けて、開いた人もスヤスヤへ移す。
+ * 記事を書く場所・ビルドの流れはこのリポジトリのまま。
+ */
+const HOME = "https://suyasuya.me/tech/";
+function suyasuyaUrl(url: string): string | undefined {
+  if (url === "/") return HOME;
+  const m = url.match(/^\/posts\/([^/]+)\/$/);
+  return m ? `${HOME}${m[1]}/` : undefined;
+}
+site.process([".html"], (pages) => {
+  for (const page of pages) {
+    if (typeof page.content !== "string") continue;
+    const to = suyasuyaUrl(String(page.data.url ?? ""));
+    if (!to) continue;
+    const esc = escapeHtml(to);
+    page.content = page.content
+      .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${esc}">`)
+      .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${esc}">`)
+      .replace(
+        "</head>",
+        `<meta http-equiv="refresh" content="0; url=${esc}"><script>location.replace(${JSON.stringify(to)})</script></head>`,
+      );
+  }
+});
+
 /** public/ 相当: src/public をサイトルートへ（例: /yasuna_gal.jpg） */
 site.copy("public", "/");
 
