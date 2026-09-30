@@ -1,0 +1,30 @@
+# 記事の linkcard の中身(OGP)を取り直して、linkcards.cache.json をコミットする。
+# スヤスヤ(suyasuya.me)はこのキャッシュを読んでカードを作るので、コミットしておかないとそちらに中身が出ない。
+name: Link cards
+
+on:
+  push:
+    branches: [main]
+    paths: ["src/posts/**", "drafts/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  linkcards:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+      - run: deno task linkcards
+      - name: Commit cache
+        run: |
+          if git diff --quiet linkcards.cache.json; then echo "変更なし"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add linkcards.cache.json
+          git commit -m "リンクカードのキャッシュを更新"
+          git push

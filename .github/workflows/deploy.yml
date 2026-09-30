@@ -21,6 +21,9 @@ jobs:
       - uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
+      - name: Link cards
+        # linkcard の URL の OGP を取り直してキャッシュを更新する(取れなければ既存のキャッシュのまま)
+        run: deno task linkcards || true
       - name: Build
         env:
           # OGP・canonical の絶対 URL 用（未設定だと localhost のままになりシェア時に画像が出ない）

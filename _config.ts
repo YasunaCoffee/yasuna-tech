@@ -83,22 +83,71 @@ function renderLinkCard(rawUrl: string): string {
     `</span></a>`;
 }
 
-/** 記事 HTML 内の ```linkcard コードブロックをカードのグリッドに置換 */
+/** X(Twitter)のポストの URL。linkcard の中にあればポストの埋め込みにする */
+const TWEET_RE = /^https?:\/\/(?:www\.)?(?:x|twitter)\.com\/[^/]+\/status\/(\d+)/i;
+
+/** ポストの埋め込み。widgets.js が読めないとき(ブロックなど)は、中のリンクがそのまま出る */
+function renderTweet(url: string): string {
+  const u = url.replace(/^https?:\/\/(?:www\.)?x\.com\//i, "https://twitter.com/");
+  return `<blockquote class="twitter-tweet" data-dnt="true"><a href="${
+    escapeHtml(u)
+  }">${escapeHtml(url)}</a></blockquote>`;
+}
+
+/** 記事 HTML 内の ```linkcard コードブロックをカードのグリッドに置換(X のポストは埋め込み) */
 site.process([".html"], (pages) => {
   const re =
     /<pre[^>]*>\s*<code[^>]*class="[^"]*language-linkcard[^"]*"[^>]*>([\s\S]*?)<\/code>\s*<\/pre>/g;
   for (const page of pages) {
     if (typeof page.content !== "string") continue;
     if (!page.content.includes("language-linkcard")) continue;
+    let hasTweet = false;
     page.content = page.content.replace(re, (_m, inner: string) => {
-      const cards = inner
+      const urls = inner
         .split(/\r?\n/)
-        .map((l) => l.trim())
-        .filter((l) => /https?:\/\//i.test(l))
-        .map(renderLinkCard)
-        .join("");
-      return cards ? `<div class="link-card-grid">${cards}</div>` : "";
+        .map((l) => decodeEntities(l.trim()))
+        .filter((l) => /https?:\/\//i.test(l));
+      // X(Twitter)のポストはカードではなく、ポストそのものを埋め込んで見せる
+      const tweets = urls.filter((u) => TWEET_RE.test(u));
+      const links = urls.filter((u) => !TWEET_RE.test(u));
+      if (tweets.length) hasTweet = true;
+      const cards = links.map(renderLinkCard).join("");
+      return tweets.map(renderTweet).join("") +
+        (cards ? `<div class="link-card-grid">${cards}</div>` : "");
     });
+    if (hasTweet && !page.content.includes("platform.twitter.com/widgets.js")) {
+      page.content = page.content.replace(
+        "</body>",
+        `<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></body>`,
+      );
+    }
+  }
+});
+
+/**
+ * 本家はスヤスヤ(suyasuya.me/tech/)。記事はスヤスヤが毎朝取り込んでいる。
+ * GitHub Pages 側の記事とトップは、canonical・og:url をスヤスヤに向けて、開いた人もスヤスヤへ移す。
+ * 記事を書く場所・ビルドの流れはこのリポジトリのまま。
+ */
+const HOME = "https://suyasuya.me/tech/";
+function suyasuyaUrl(url: string): string | undefined {
+  if (url === "/") return HOME;
+  const m = url.match(/^\/posts\/([^/]+)\/$/);
+  return m ? `${HOME}${m[1]}/` : undefined;
+}
+site.process([".html"], (pages) => {
+  for (const page of pages) {
+    if (typeof page.content !== "string") continue;
+    const to = suyasuyaUrl(String(page.data.url ?? ""));
+    if (!to) continue;
+    const esc = escapeHtml(to);
+    page.content = page.content
+      .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${esc}">`)
+      .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${esc}">`)
+      .replace(
+        "</head>",
+        `<meta http-equiv="refresh" content="0; url=${esc}"><script>location.replace(${JSON.stringify(to)})</script></head>`,
+      );
   }
 });
 
