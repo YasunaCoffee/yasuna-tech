@@ -1,5 +1,5 @@
 ---
-title: "AWS Lambda Web Functionsが出た：Expressのサーバーをそのまま置けて、待ち時間にCPU課金がかかりにくい"
+title: "AWS Lambda Web Functionsが出た：Honoのサーバーをそのまま置けて、待ち時間にCPU課金がかかりにくい"
 date: "2026-10-14"
 author: yasuna
 emoji: "⚡"
@@ -66,6 +66,22 @@ app.listen(port, host, () => {
 手元で `node index.js` で動かすのと同じコードです。違うのは、待ち受けるホストとポートを `AWS_LAMBDA_HTTP_ENDPOINT` という環境変数から読むところだけ。手元では `AWS_LAMBDA_HTTP_ENDPOINT=127.0.0.1:3000 node index.js` のように自分で入れて動かせます。
 
 Express のほかに、Hono、Fastify、Next.js など Node.js のフレームワークならなんでも載るそうです。
+
+わたしは Hono をよく使うので、Hono ならこう書けそうです（発表記事の例ではなく、まだ動かしていないので参考程度に）。
+
+```js
+import { Hono } from 'hono';
+import { serve } from '@hono/node-server';
+
+const app = new Hono();
+const [hostname, port] = process.env.AWS_LAMBDA_HTTP_ENDPOINT.split(':');
+
+app.get('/', (c) => c.json({ message: 'Hello from Lambda Web Functions!' }));
+
+serve({ fetch: app.fetch, hostname, port: Number(port) });
+```
+
+Hono は Cloudflare Workers でもそのまま動くので、**同じアプリを Cloudflare と Lambda の両方に置ける**のがうれしいところです。
 
 ## その２：待っている時間に CPU の課金がかかりにくい
 
@@ -152,7 +168,7 @@ aws lambda-web deploy --name hello-world --hello-world
 # まとめ
 
 - Lambda に **Web Functions** が増えて、Event Functions・Web Functions・MicroVMs の3つになった
-- **Express や Hono のサーバーを書き換えずに**載せられる。違うのは待ち受けるポートを環境変数から読むところだけ
+- **Hono や Express のサーバーを書き換えずに**載せられる。違うのは待ち受けるポートを環境変数から読むところだけ
 - 1つの実行環境で最大128リクエストを同時に処理して、**CPU を使った時間で課金**。待ち時間が長い Web アプリや、AI のストリーミングに向いている
 - デプロイは1コマンド、複数リージョンもグローバル URL も、カナリアリリースも簡単
 - 東京リージョンで使える。ランタイムは Node.js 24 の Arm64
