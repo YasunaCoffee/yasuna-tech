@@ -67,7 +67,7 @@ app.listen(port, host, () => {
 
 Express のほかに、Hono、Fastify、Next.js など Node.js のフレームワークならなんでも載るそうです。
 
-わたしは Hono をよく使うので、Hono ならこう書けそうです（発表記事の例ではなく、まだ動かしていないので参考程度に）。
+Hono は最近取り入れようとキャッチアップしているところなので、Hono ならこう書けそう、というのも置いておきます（発表記事の例ではなく、まだ動かしていないので参考程度に）。
 
 ```js
 import { Hono } from 'hono';
@@ -157,7 +157,7 @@ aws lambda-web deploy --name hello-world --hello-world
 
 「Hono が載る」「CPU を使った時間で課金」と聞くと、**Cloudflare Workers** を思い出す人も多いと思います。わたしもそうでした。
 
-そこで、ふだん使っている Workers とならべてみました。Workers 側は、わたしが使ってきて知っている範囲のことなので、料金や制限の細かい数字は公式のページで確かめてください。
+そこで、スヤスヤを置いている Cloudflare の Workers とならべてみました。Workers 側の料金や制限の細かい数字は変わることがあるので、公式のページで確かめてください。
 
 | | Cloudflare Workers | Lambda Web Functions |
 |---|---|---|
