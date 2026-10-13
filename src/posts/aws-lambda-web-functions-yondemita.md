@@ -1,5 +1,5 @@
 ---
-title: "AWS Lambda Web Functionsが出た：Honoのサーバーをそのまま置けて、待ち時間にCPU課金がかかりにくい"
+title: "Honoなどのサーバーをそのまま置けるAWS Lambda Web Functionsが出た"
 date: "2026-10-14"
 author: yasuna
 emoji: "⚡"
