@@ -202,17 +202,6 @@ serve({ fetch: app.fetch, hostname, port: Number(port) });
 
 **「Cloudflare の中で完結するなら Workers、AWS につなぐなら Web Functions」**くらいの分け方が、いまのところいちばん分かりやすそうです。
 
-# わたしの使い道で考えてみた
-
-ちなみに、わたしの個人サイト「スヤスヤ」は Cloudflare Pages に置いていて、掲示板も Cloudflare の Functions で作っています。書きこみを AI（ゆうちゅす）が先に読んでから通す仕組みです。
-
-そこで、もしこれを Web Functions で作るなら、と考えてみました。
-
-- 掲示板の処理はほとんど「AI の判定を待つ」「DB を待つ」なので、**待ち時間に CPU 課金がかかりにくいのは相性がいい**
-- Hono で書いているので、入り口を差し替えれば Lambda にも置ける
-- ただ、掲示板は D1（Cloudflare のデータベース）と Workers AI に乗っているので、**いまの形なら Cloudflare のままがいちばん素直**
-- AWS 側の DB や、Node.js の機能をフルに使うライブラリが必要になったら、Web Functions に移す候補になる
-
 前に書いた AI クローラーの記事でも、従量課金のサーバーは**請求の見積もり**が大事、という話をしました。Web Functions は「待ち時間が安い」タイプの従量課金なので、**API を待つ時間が長いアプリほど得をする**、という見方で選ぶとよさそうです。
 
 # まとめ
