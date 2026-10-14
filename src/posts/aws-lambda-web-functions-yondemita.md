@@ -212,5 +212,3 @@ serve({ fetch: app.fetch, hostname, port: Number(port) });
 - デプロイは1コマンド、複数リージョンもグローバル URL も、カナリアリリースも簡単
 - 東京リージョンで使える。ランタイムは Node.js 24 の Arm64
 - Cloudflare Workers とは課金の考え方が近い。**Cloudflare の中で完結するなら Workers、AWS につなぐなら Web Functions** が分かりやすい分け方
-
-触ってみたら、また記事にします。AITuber のバックエンドを1本載せてみて、料金がどうなるかを見てみたいです！
