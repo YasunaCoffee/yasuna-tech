@@ -124,5 +124,12 @@
     "description": "Play the ModRetro Game Boy Color collection.",
     "image": "",
     "siteName": "developers.openai.com"
+  },
+  "https://aws.amazon.com/jp/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/": {
+    "url": "https://aws.amazon.com/jp/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/",
+    "title": "Announcing AWS Lambda Web Functions | Amazon Web Services",
+    "description": "AWS Lambda Web Functions is a serverless compute primitive that runs your HTTP framework natively, delivering fast, consistent responses through multi-concurrent execution and automated global distribution.",
+    "image": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/10/14/01979_AWS_Lambda_Web_Functions-horizontal-1-1260x628.png",
+    "siteName": "Amazon Web Services"
   }
 }
