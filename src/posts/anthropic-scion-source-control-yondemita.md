@@ -1,5 +1,5 @@
 ---
-title: "1日3万マージでgitが詰まったAnthropicの自前バージョン管理「Scion」を読んだ"
+title: "1日3万マージできる?! Anthropicの自前バージョン管理「Scion」を読んだ"
 date: "2026-10-15"
 author: yasuna
 emoji: "🌱"
@@ -17,6 +17,10 @@ description: "Anthropic のエンジニアリングブログに、git をやめ�
 # はじめに
 
 Anthropic のエンジニアリングブログに「Redesigning source control at Anthropic」という記事が出ました（2026-10-13）。
+
+```linkcard
+https://www.anthropic.com/engineering/redesigning-source-control
+```
 
 結論、**Claude がコードを書きすぎて git が追いつかなくなったので、エージェント前提のバージョン管理システム「Scion」を自分たちで作って、5か月で移行した**、という話です。
 
