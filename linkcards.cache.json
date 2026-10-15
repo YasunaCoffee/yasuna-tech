@@ -131,5 +131,12 @@
     "description": "AWS Lambda Web Functions is a serverless compute primitive that runs your HTTP framework natively, delivering fast, consistent responses through multi-concurrent execution and automated global distribution.",
     "image": "https://d2908q01vomqb2.cloudfront.net/da4b9237bacccdf19c0760cab7aec4a8359010b0/2026/10/14/01979_AWS_Lambda_Web_Functions-horizontal-1-1260x628.png",
     "siteName": "Amazon Web Services"
+  },
+  "https://www.anthropic.com/engineering/redesigning-source-control": {
+    "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+    "title": "Redesigning source control at Anthropic",
+    "description": "As our merges per day grew more than tenfold, source control became our biggest development bottleneck. Here, we share how we migrated to an in-house version control system in five months.",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d344b849251502fade67ad16f09bb86fa6f42363-500x263.png",
+    "siteName": "anthropic.com"
   }
 }
