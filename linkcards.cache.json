@@ -43,7 +43,7 @@
   },
   "https://www.calmtech.institute/calm-tech-certified-products": {
     "url": "https://www.calmtech.institute/calm-tech-certified-products",
-    "title": "CERTIFIED PRODUCTS | Calm Tech Institute",
+    "title": "PRODUCTS | Calm Tech Institute",
     "description": "View all of the products certified by Calm Tech Institute",
     "image": "https://static.wixstatic.com/media/4c414f_d67345f4a7ee4ec4b3ae68e90880ea9e%7Emv2.png/v1/fit/w_2500,h_1330,al_c/4c414f_d67345f4a7ee4ec4b3ae68e90880ea9e%7Emv2.png",
     "siteName": "Calm Tech Institute"
@@ -136,7 +136,28 @@
     "url": "https://www.anthropic.com/engineering/redesigning-source-control",
     "title": "Redesigning source control at Anthropic",
     "description": "As our merges per day grew more than tenfold, source control became our biggest development bottleneck. Here, we share how we migrated to an in-house version control system in five months.",
-    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d344b849251502fade67ad16f09bb86fa6f42363-500x263.png",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/f51d635fde176783a022c74b185a4dea2a54e8a0-1200x630.jpg",
     "siteName": "anthropic.com"
+  },
+  "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/": {
+    "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/",
+    "title": "openai.com",
+    "description": "",
+    "image": "",
+    "siteName": "openai.com"
+  },
+  "https://github.com/php/php-src/blob/php-8.5.12/NEWS": {
+    "url": "https://github.com/php/php-src/blob/php-8.5.12/NEWS",
+    "title": "php-src/NEWS at php-8.5.12 · php/php-src",
+    "description": "The PHP Interpreter. Contribute to php/php-src development by creating an account on GitHub.",
+    "image": "https://opengraph.githubassets.com/35d24376b629dac6f456cfd34586fc0385436eb09492e70aa5ab8c6ef649a39f/php/php-src",
+    "siteName": "GitHub"
+  },
+  "https://ubuntu.com/security/CVE-2026-109618": {
+    "url": "https://ubuntu.com/security/CVE-2026-109618",
+    "title": "CVE-2026-109618 | Ubuntu",
+    "description": "Ubuntu is an open source software operating system that runs from the desktop, to the cloud, to all your internet connected things.",
+    "image": "https://assets.ubuntu.com/v1/47f12466-og_%20ubuntu.png",
+    "siteName": "Ubuntu"
   }
 }
