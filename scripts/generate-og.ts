@@ -333,7 +333,13 @@ function heiseiCard(opt: {
 
 function titleBlock(title: string, u: number): Record<string, unknown> {
   // 折り返しは satori に任せる(英単語は途中で切らない)。長さで字の大きさを変える
-  const t = title.replace(/\s+/g, " ").trim();
+  // Mochiy Pop P One の全角英数・記号(：！？Ａ０ など)は形が字の幅より右にはみ出していて、次の字にかぶる。
+  // サムネに描くときだけ半角にする(題名そのものは変えない)。「：」は後ろに空白を入れて区切りに見せる
+  const t = title
+    .replace(/[\uFF01-\uFF5E]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xFEE0))
+    .replace(/:(?! )/g, ": ")
+    .replace(/\s+/g, " ")
+    .trim();
   const size = t.length > 44 ? 44 : t.length > 30 ? 50 : 58;
   return {
     type: "div",
