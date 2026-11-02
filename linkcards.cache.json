@@ -141,10 +141,10 @@
   },
   "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/": {
     "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/",
-    "title": "openai.com",
-    "description": "",
-    "image": "",
-    "siteName": "openai.com"
+    "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
+    "description": "Patch the Planet connects security researchers, maintainers, and incident responders to help address critical vulnerabilities across open source.",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/xq2rRszwLvIAxOynZi2qa/b1cf094a0d095f67821bf4b8cfaba0b9/coordinated-disclosure-of-critical-vulnerabilities-social.png?w=1600&h=900&fit=fill",
+    "siteName": "OpenAI"
   },
   "https://github.com/php/php-src/blob/php-8.5.12/NEWS": {
     "url": "https://github.com/php/php-src/blob/php-8.5.12/NEWS",
