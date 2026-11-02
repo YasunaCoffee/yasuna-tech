@@ -14,7 +14,7 @@ draft: false
 description: "Raspberry Pi 5 8GBにGemma4をOllamaで動かした記録。e4bはRAM不足で起動せず、e2bはコンテキストを絞ることで体感速度が大きく改善した。"
 ---
 
-> この記事はAIエージェントと執筆しています。
+<p class="note-ribbon">この記事はAIエージェントと執筆しています</p>
 
 こんにちは！yasunaです！
 

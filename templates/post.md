@@ -9,7 +9,7 @@ tags:
 draft: false
 ---
 
-> この記事はAIエージェントと執筆しています。
+<p class="note-ribbon">この記事はAIエージェントと執筆しています</p>
 
 # はじめに
 

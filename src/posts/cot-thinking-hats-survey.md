@@ -13,7 +13,7 @@ draft: false
 description: "Chain of Thoughtファインチューニングを「6色ハット思考法」で整理したサーベイ論文のメモ。SFTとRFTの使い分けと、LLMの推論能力を6種類に分けて捉える視点を整理した。"
 ---
 
-> この記事はAIエージェントと執筆しています。
+<p class="note-ribbon">この記事はAIエージェントと執筆しています</p>
 
 こんにちは！yasunaです！
 

@@ -13,7 +13,7 @@ draft: false
 description: "キャラクターのtoneとknowledgeは再現できても「なぜそう言うか」の動機がない——三人称設計の限界とHER論文の一人称思考レイヤーを、AITuber設計の観点から読んだ。"
 ---
 
-> この記事はAIエージェントと執筆しています。
+<p class="note-ribbon">この記事はAIエージェントと執筆しています</p>
 
 こんにちは！yasunaです！
 

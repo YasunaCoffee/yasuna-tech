@@ -14,7 +14,7 @@ draft: false
 description: "Kimi Code CLI単体だとハーネスが弱くて絶対ルールを守りきれなかったので、モデルはKimiのまま外側の制御をしっかりしたCLIに乗せ替えようとした話。まずClaude CodeのAPIキー環境変数(ANTHROPIC_API_KEY)経由で試したらログイン済みのClaude.aiアカウントに環境変数ごと握りつぶされ、最終的にマルチプロバイダー対応のopencodeに乗り換えて数分で動いた記録。"
 ---
 
-> この記事はAIエージェントと執筆しています。
+<p class="note-ribbon">この記事はAIエージェントと執筆しています</p>
 
 こんにちは！yasunaです！
 
