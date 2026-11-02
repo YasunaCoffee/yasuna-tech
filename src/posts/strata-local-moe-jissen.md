@@ -1,5 +1,5 @@
 ---
-title: "StrataでQwen3.6-35B-A3Bを動かして、スマホから日本語で使う"
+title: "StrataでQwen3.6-35B-A3Bを動かして、家の3080 Tiをスマホから使う"
 date: "2026-10-31"
 author: yasuna
 emoji: "🪨"
