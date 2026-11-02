@@ -14,6 +14,8 @@ draft: false
 description: "Anthropic の Frontier Red Team が、Claude で123のオープンソースライブラリの RISC-V のバイナリについて「64MB 未満のどんな入力でもクラッシュしない」ことを形式的に証明した、という記事を出した。既存のファズテストをそのまま仕様にするのがポイント。何年も見つからなかったバグも出てきた。"
 ---
 
+> この記事はAIエージェントと執筆しています。
+
 # はじめに
 
 Anthropic の Frontier Red Team が「LLMs are making formal software verification feasible at a much larger scale」という記事を出しました（2026-10-22）。Theorem という会社との共同の取り組みです。

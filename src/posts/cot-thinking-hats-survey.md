@@ -13,6 +13,8 @@ draft: false
 description: "Chain of Thoughtファインチューニングを「6色ハット思考法」で整理したサーベイ論文のメモ。SFTとRFTの使い分けと、LLMの推論能力を6種類に分けて捉える視点を整理した。"
 ---
 
+> この記事はAIエージェントと執筆しています。
+
 こんにちは！yasunaです！
 
 最近 Chain of Thought（CoT）ファインチューニングのサーベイ論文を読みました。タイトルが「Putting on the Thinking Hats」で、Edward de Bono の **6色ハット思考法** を軸に LLM の推論能力を整理するというアプローチが面白くて。「あーそういう切り口があるか」となったので記録しておきます。

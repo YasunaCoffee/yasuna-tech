@@ -12,6 +12,8 @@ tags:
 draft: false
 ---
 
+> この記事はAIエージェントと執筆しています。
+
 > この記事は [note の同名記事](https://note.com/yasunacoffee/n/nf66f6909950b) をブログ用に移植したものです。
 
 2026 年あけましておめでとうございます。個人開発者の yasuna です。  

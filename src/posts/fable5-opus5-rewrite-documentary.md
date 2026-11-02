@@ -12,6 +12,8 @@ tags:
 draft: false
 ---
 
+> この記事はAIエージェントと執筆しています。
+
 # はじめに
 
 [前の記事](/posts/claude-opus-5-whats-new-yondemita/)で「Opus 5 に自分のリリース記事を

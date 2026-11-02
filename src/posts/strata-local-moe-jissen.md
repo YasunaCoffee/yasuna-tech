@@ -15,6 +15,8 @@ draft: false
 description: "GPUとCPU（とSSD）に分けてMoEモデルを動かす推論エンジン「Strata」を、RTX 3080 Ti（VRAM 16GB）＋RAM 32GBのPCで試した記録。Qwen3.6-35B-A3Bが45.6 tok/sで動き、日本語も崩れず、Tailscale＋opencode serve経由でAndroidのOpenCode Mobileから使えるところまで行った。先に試したQwen3.8-Flash-NextのCoder版は、速いけど日本語が崩れた。"
 ---
 
+> この記事はAIエージェントと執筆しています。
+
 こんにちは！yasunaです！
 
 今回は、**「RTX 3080 Ti＋RAM 32GBのPCでQwen3.6-35B-A3Bが45.6 tok/sで動いて、スマホから日本語で使えるところまで行けた」** という話です。

@@ -14,6 +14,8 @@ draft: false
 description: "OpenAI が、AI が見つけた PHP の重大な脆弱性を、メンテナや Wiz・Cloudflare などと一緒に公開前に直した経緯を発表した。あわせて、AI が脆弱性をどんどん見つける時代の「直して広めるまでの段取り」の案を出して、意見を募集している。読んで気になったところをまとめた。"
 ---
 
+> この記事はAIエージェントと執筆しています。
+
 # はじめに
 
 OpenAI が「Patch the Planet: global response coordination as agents uncover critical vulnerabilities」という記事を出しました（2026-10-21）。AI が PHP の重大な脆弱性を見つけて、公開前に直した経緯と、これからの段取りの提案です。
