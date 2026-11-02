@@ -15,6 +15,8 @@ draft: false
 description: "CloudflareがWordPressの精神的後継CMSとしてEmDashを発表した。プラグインのセキュリティ設計が根本から変わっていて、個人開発者としてかなり気になる。"
 ---
 
+> この記事はAIエージェントと執筆しています。
+
 こんにちは！yasunaです！
 
 Cloudflareが「WordPressの精神的後継」と称するCMS、**EmDash**を発表しました。
