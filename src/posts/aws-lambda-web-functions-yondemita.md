@@ -14,7 +14,7 @@ draft: false
 description: "AWS Lambda に、ポートで待ち受ける普通の HTTP サーバーをそのまま載せられる Web Functions が出た。1つの実行環境で最大128リクエストを同時にさばき、DB や API を待っている時間には CPU の課金がほとんどかからない。発表記事を読んで、気になったところと Cloudflare Workers とのちがいをまとめた。"
 ---
 
-> この記事はAIエージェントと執筆しています。
+<p class="note-ribbon">この記事はAIエージェントと執筆しています</p>
 
 # はじめに
 

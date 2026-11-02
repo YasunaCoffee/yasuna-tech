@@ -12,7 +12,7 @@ tags:
 draft: false
 ---
 
-> この記事はAIエージェントと執筆しています。
+<p class="note-ribbon">この記事はAIエージェントと執筆しています</p>
 
 > この記事は [note の同名記事](https://note.com/yasunacoffee/n/nac035466578a) をブログ用に移植したものです。
 
