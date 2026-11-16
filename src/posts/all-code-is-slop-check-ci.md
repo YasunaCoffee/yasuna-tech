@@ -1,5 +1,5 @@
 ---
-title: "slopはゴミ：Grok Botチームの「ゴミを出さない仕組み」をうちのブログにも入れてみた"
+title: "slopはゴミ：Grok Botチームの「AI Slopを出さない仕組み」をうちのブログにも入れてみた"
 date: "2026-11-16"
 author: yasuna
 emoji: "🧹"
