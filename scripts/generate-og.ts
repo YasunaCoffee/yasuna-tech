@@ -70,7 +70,17 @@ function fontSourceUrls(f: typeof FONT_FILES[number]): string[] {
   ];
 }
 
+/**
+ * 開きかっこの位置を直した Mochiy(日本語)。リポジトリに入れてあり、CDN より先に使う。
+ * satori は Mochiy の開きかっこ「『〈《【〔を右にずらして描き、次の字に重なって隠れるため
+ * (理由と作り方は scripts/og-fonts/make-mochiy.py)
+ */
+const PATCHED_FONTS: Record<string, string> = {
+  "mochiy-pop-p-one-japanese-400-normal.woff": join(ROOT, "scripts", "og-fonts", "mochiy-pop-p-one-japanese-400-og.woff"),
+};
+
 async function loadFontWoff(f: typeof FONT_FILES[number]): Promise<ArrayBuffer> {
+  if (PATCHED_FONTS[f.file]) return (await Deno.readFile(PATCHED_FONTS[f.file])).buffer as ArrayBuffer;
   const localPath = join(ROOT, "scripts", "fonts", f.file);
   try {
     if ((await Deno.stat(localPath)).isFile) {
