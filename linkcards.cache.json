@@ -113,7 +113,7 @@
   },
   "https://support.modretro.com/en_us/chromatic-devday-edition-quickstart-guid-By1iOlcMg": {
     "url": "https://support.modretro.com/en_us/chromatic-devday-edition-quickstart-guid-By1iOlcMg",
-    "title": "Chromatic: DevDay Edition Quickstart Guide",
+    "title": "Chromatic: Codex Edition Quickstart Guide",
     "description": "Welcome to the QuickStart Guide for the ModRetro Chromatic Codex Edition Following these steps will allow you to dream up your own Chromatic game  First le",
     "image": "",
     "siteName": "support.modretro.com"
@@ -136,7 +136,7 @@
     "url": "https://www.anthropic.com/engineering/redesigning-source-control",
     "title": "Redesigning source control at Anthropic",
     "description": "As our merges per day grew more than tenfold, source control became our biggest development bottleneck. Here, we share how we migrated to an in-house version control system in five months.",
-    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/f51d635fde176783a022c74b185a4dea2a54e8a0-1200x630.jpg",
+    "image": "https://assets.claude.com/2dcf36ee05c3cd100bad233283848ccc23aa9e64.jpg",
     "siteName": "anthropic.com"
   },
   "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities/": {
@@ -150,7 +150,7 @@
     "url": "https://github.com/php/php-src/blob/php-8.5.12/NEWS",
     "title": "php-src/NEWS at php-8.5.12 · php/php-src",
     "description": "The PHP Interpreter. Contribute to php/php-src development by creating an account on GitHub.",
-    "image": "https://opengraph.githubassets.com/f4efb746cf209063380a4a4742bfd88b075c5088c468ebfc31ea1c9db830ec8e/php/php-src",
+    "image": "https://opengraph.githubassets.com/f650e91af68cc38f605cba858aa758421f61f9b265cd42e4cb0642eae3cc9ff3/php/php-src",
     "siteName": "GitHub"
   },
   "https://ubuntu.com/security/CVE-2026-109618": {
