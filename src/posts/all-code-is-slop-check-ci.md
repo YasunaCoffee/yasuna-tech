@@ -26,7 +26,7 @@ https://x.com/poteto/status/2121673563489140863
 
 https://github.com/cursor/plugins/tree/main/pstack
 
-この記事は、トークの内容と pstack を Claude（AI）といっしょに読んでまとめ、そのうえでうちのブログのリポジトリに実際に入れてみたものです。トークの中身は、動画を NotebookLM に読ませて作った資料から拾ったので、数字などは動画で確かめていません。
+この記事は、トークの内容と pstack を Claude（AI）といっしょに読んでまとめ、そのうえでうちのブログのリポジトリに実際に入れてみたものです。
 
 ---
 
