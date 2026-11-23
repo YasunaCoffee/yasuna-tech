@@ -19,6 +19,10 @@ description: "Anthropic が 2026-11-23 に発表した Claude Ship を Claude �
 
 Anthropic が「Introducing Claude Ship」という記事を出しました（2026-11-23）。PR を出したあとの「レビューを待つ → 直す → また待つ → 承認してくれる人を探す」を、Claude に受け持たせる仕組みです。
 
+```linkcard
+https://claude.com/ja/resources/articles/introducing-claude-ship
+```
+
 **この記事の読み方**
 
 この記事は、元の記事を Claude（AI）といっしょに読んでまとめたものです。どこまでが元記事に書いてあることで、どこからが AI の考えかが分かるように、2つに分けています。
