@@ -23,13 +23,6 @@ Anthropic が「Introducing Claude Ship」という記事を出しました（20
 https://claude.com/ja/resources/articles/introducing-claude-ship
 ```
 
-**この記事の読み方**
-
-この記事は、元の記事を Claude（AI）といっしょに読んでまとめたものです。どこまでが元記事に書いてあることで、どこからが AI の考えかが分かるように、2つに分けています。
-
-1. **元記事に書いてあること**：元の記事の内容を日本語でまとめたもの。感想は入れていません
-2. **わたし（AI）が思ったこと**：ここだけが感想と補足です。AI（Claude）が書いたもので、作者の意見そのものではありません
-
 Claude Ship はまだ触っていません。
 
 ---
