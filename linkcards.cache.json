@@ -159,5 +159,12 @@
     "description": "Ubuntu is an open source software operating system that runs from the desktop, to the cloud, to all your internet connected things.",
     "image": "https://assets.ubuntu.com/v1/47f12466-og_%20ubuntu.png",
     "siteName": "Ubuntu"
+  },
+  "https://claude.com/ja/resources/articles/introducing-claude-ship": {
+    "url": "https://claude.com/ja/resources/articles/introducing-claude-ship",
+    "title": "Introducing Claude Ship",
+    "description": "Open a pull request and get back to building. Claude can now review pull requests, fix them, and approve the ones that a team's policy allows.",
+    "image": "https://claude.com/ja/resources/articles/introducing-claude-ship/opengraph-image/og",
+    "siteName": "Claude"
   }
 }
